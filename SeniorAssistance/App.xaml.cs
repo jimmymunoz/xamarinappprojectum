@@ -8,7 +8,8 @@ namespace SeniorAssistance
 		{
 			InitializeComponent();
 
-			MainPage = new SeniorAssistancePage();
+			//MainPage = new SeniorAssistancePage();
+			MainPage = new NavigationPage(new HomeLayoutPage());
 		}
 
 		protected override void OnStart()

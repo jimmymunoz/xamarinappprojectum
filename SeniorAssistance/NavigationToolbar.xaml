@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<StackLayout xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="SeniorAssistance.NavigationToolbar" 
+    Orientation="Vertical"
+    BackgroundColor="#2C3E50"
+    >
+    <StackLayout Orientation="Vertical">
+        <Image x:Name="btnHome" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Source="web.png" Grid.Row="0" HeightRequest="65" WidthRequest="65" />
+        <Label Text="Accueil" FontAttributes="Bold" FontSize="12" HorizontalTextAlignment="Center" TextColor="White"/>
+    </StackLayout>
+    <StackLayout Orientation="Vertical">
+        <Image x:Name="btnSettings" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Source="cogwheel.png" Grid.Row="0" HeightRequest="65" WidthRequest="65" />
+        <Label Text="Settings" FontAttributes="Bold" FontSize="12" HorizontalTextAlignment="Center" TextColor="White" />
+    </StackLayout>
+    <StackLayout Orientation="Vertical">
+        <Image x:Name="btnCall" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Source="telephone.png" Grid.Row="0" HeightRequest="65" WidthRequest="65" />
+        <Label Text="Appeler" FontAttributes="Bold" FontSize="12" HorizontalTextAlignment="Center" TextColor="White" />
+    </StackLayout>
+</StackLayout>
