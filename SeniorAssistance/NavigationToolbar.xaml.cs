@@ -38,7 +38,7 @@ namespace SeniorAssistance
 
 		void clickImageSettings(object sender, EventArgs e)
 		{
-			//Navigation.PushAsync(new DataBindingPage());
+			Navigation.PushAsync(new SettingsPage());
 		}
 
 		void clickImageCall(object sender, EventArgs e)

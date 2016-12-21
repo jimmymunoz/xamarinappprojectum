@@ -36,6 +36,15 @@
     <EmbeddedResource Include="HomeLayoutPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="MedicamentsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MedicamentsFormPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -50,6 +59,15 @@
     </Compile>
     <Compile Include="HomeLayoutPage.xaml.cs">
       <DependentUpon>HomeLayoutPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MedicamentsPage.xaml.cs">
+      <DependentUpon>MedicamentsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MedicamentsFormPage.xaml.cs">
+      <DependentUpon>MedicamentsFormPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
