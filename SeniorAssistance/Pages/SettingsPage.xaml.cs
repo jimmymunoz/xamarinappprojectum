@@ -27,17 +27,17 @@ namespace SeniorAssistance
 
 		void clickImageMyInformation(object sender, EventArgs e)
 		{
-			//Navigation.PushAsync(new SettingsPage());
+			Navigation.PushAsync(new MyInformationPage());
 		}
 
 		void clickImageContacts(object sender, EventArgs e)
 		{
-			//Navigation.PushAsync(new MedicamentsPage());
+			Navigation.PushAsync(new ConfigContactsPage());
 		}
 
 		void clickImageBank(object sender, EventArgs e)
 		{
-			//Navigation.PushAsync(new MedicamentsPage());
+			Navigation.PushAsync(new SettingsBankPage());
 		}
 
 

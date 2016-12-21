@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:common="clr-namespace:SeniorAssistance;assembly=SeniorAssistance"
+    x:Class="SeniorAssistance.MyInformationPage"
+    Title="Mes Informations">
+    <ContentPage.Content>
+        <Grid x:Name="outerGrid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="100" />
+            </Grid.ColumnDefinitions>
+            <Grid x:Name="innerGrid" Grid.Column="0"  Padding="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label Text="Name:" Grid.Row="0" Grid.Column="0" />
+                <Label Text="Date:" Grid.Row="1" Grid.Column="0" />
+                <Label Text="Tags:" Grid.Row="2" Grid.Column="0" />
+                <Entry Grid.Row="0" Grid.Column="1" />
+                <Entry Grid.Row="1" Grid.Column="1" />
+                <Entry Grid.Row="2" Grid.Column="1" />
+				
+				<Grid x:Name="buttonsGrid"  Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="#CCCCCC">
+	                <Grid.ColumnDefinitions>
+	                    <ColumnDefinition Width="*" />
+	                    <ColumnDefinition Width="*" />
+	                </Grid.ColumnDefinitions>
+	                <Button Text="Annuler" Grid.Column="0" />
+	                <Button Text="Enregistrer" Grid.Column="1" />
+	            </Grid>
+            </Grid>
+            <common:NavigationToolbar Grid.Column="1">
+            </common:NavigationToolbar>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

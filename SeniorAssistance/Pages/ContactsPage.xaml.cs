@@ -5,9 +5,9 @@ using Xamarin.Forms;
 
 namespace SeniorAssistance
 {
-	public partial class MedicamentsFormPage : ContentPage
+	public partial class ContactsPage : ContentPage
 	{
-		public MedicamentsFormPage()
+		public ContactsPage()
 		{
 			InitializeComponent();
 		}

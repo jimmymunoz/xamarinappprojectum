@@ -3,7 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:common="clr-namespace:SeniorAssistance;assembly=SeniorAssistance"
     x:Class="SeniorAssistance.MedicamentsFormPage"
-    Title="Ajouter Medicament">
+    Title="Ajouter/Modifier Medicament">
     <ContentPage.Content>
         <Grid x:Name="outerGrid">
             <Grid.ColumnDefinitions>

@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:common="clr-namespace:SeniorAssistance;assembly=SeniorAssistance"
+    x:Class="SeniorAssistance.ConfigContactsPage"
+    Title="Configuration - Contacts">
+    <ContentPage.Content>
+        <Grid x:Name="outerGrid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="100" />
+            </Grid.ColumnDefinitions>
+			<Grid x:Name="innerGrid" Grid.Column="0" Padding="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="50" />
+                </Grid.RowDefinitions>
+				<StackLayout Orientation="Vertical" Grid.Row="0" Padding="10">
+					<ScrollView>
+						<ListView x:Name="ContactsView">
+						    <ListView.ItemTemplate>
+						      <DataTemplate>
+						        <TextCell Text="Contact" />
+						      </DataTemplate>
+						    </ListView.ItemTemplate>
+					  </ListView>
+					</ScrollView>
+				</StackLayout>
+                <StackLayout Grid.Row="1"  Orientation="Vertical">
+                    <Button x:Name="btnAdd" Text="Ajouter"></Button>
+                </StackLayout>
+            </Grid>
+            <common:NavigationToolbar Grid.Column="1">
+            </common:NavigationToolbar>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

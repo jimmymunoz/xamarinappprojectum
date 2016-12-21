@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:common="clr-namespace:SeniorAssistance;assembly=SeniorAssistance"
+    x:Class="SeniorAssistance.SettingsBankPage"
+    Title="SettingsBankPage">
+    <ContentPage.Content>
+        <Grid x:Name="outerGrid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="100" />
+            </Grid.ColumnDefinitions>
+			<StackLayout Grid.Column="0" Padding="10">
+				<Label Text="Content SettingsBankPage" />
+			</StackLayout>
+            <common:NavigationToolbar Grid.Column="1">
+            </common:NavigationToolbar>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -7,6 +7,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using SeniorAssistance.Database;
 
 namespace SeniorAssistance.Droid
 {
@@ -21,6 +22,7 @@ namespace SeniorAssistance.Droid
 			base.OnCreate(bundle);
 
 			global::Xamarin.Forms.Forms.Init(this, bundle);
+			ConctactDatabase.Root = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
 
 			LoadApplication(new App());
 		}
