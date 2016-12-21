@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SeniorAssistance.ContactPage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <StackLayout Grid.Column="0" Grid.Row="0">
+                <Entry x:Name="Item" Placeholder="First name"/>
+                <Entry x:Name="Item1"  Placeholder="Lastname"/>
+                <Entry x:Name="Item2"  Placeholder="Phone"/>
+            </StackLayout>
+            <StackLayout Grid.Column="1" Grid.Row="0">
+                <Button x:Name="SaveItemButtom" Text="Save Contact" />
+                <Button x:Name="getData" Text="Get Contact" />
+            </StackLayout>
+            <ListView x:Name="ItemList" Grid.ColumnSpan="2" Grid.Row="1">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem Clicked="OnDelete" CommandParameter="{Binding Firstname}"
+               Text="Delete" IsDestructive="True" />
+                            </ViewCell.ContextActions>
+                            <StackLayout Padding="15,0">
+                                <Label Text="{Binding Firstname}" FontAttributes="Bold"
+                       FontSize="Medium"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -69,6 +69,9 @@
     <EmbeddedResource Include="Pages\ConfigContactsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="ContactPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -117,6 +120,27 @@
     <Compile Include="Pages\ConfigContactsPage.xaml.cs">
       <DependentUpon>ConfigContactsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Database\AlertDatabase.cs" />
+    <Compile Include="Database\BankDatabase.cs" />
+    <Compile Include="Database\ConctactDatabase.cs" />
+    <Compile Include="Database\ContactTypeDatabase.cs" />
+    <Compile Include="Database\CrudDatabase.cs" />
+    <Compile Include="Database\MedicamentDatabase.cs" />
+    <Compile Include="Database\MedicamentHistoryDatabase.cs" />
+    <Compile Include="Database\NotificationSmsDatabase.cs" />
+    <Compile Include="Database\UserDatabase.cs" />
+    <Compile Include="Modele\Alert.cs" />
+    <Compile Include="Modele\Bank.cs" />
+    <Compile Include="Modele\Contact.cs" />
+    <Compile Include="Modele\ContactType.cs" />
+    <Compile Include="Modele\ITable.cs" />
+    <Compile Include="Modele\Medicament.cs" />
+    <Compile Include="Modele\MedicamentHistory.cs" />
+    <Compile Include="Modele\NotificationSms.cs" />
+    <Compile Include="Modele\User.cs" />
+    <Compile Include="ContactPage.xaml.cs">
+      <DependentUpon>ContactPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
@@ -128,12 +152,26 @@
     <Reference Include="Xamarin.Forms.Xaml">
       <HintPath>..\packages\Xamarin.Forms.2.3.1.114\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
+    <Reference Include="SQLitePCLRaw.core">
+      <HintPath>..\packages\SQLitePCLRaw.core.1.1.0\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLitePCLRaw.core.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.batteries_green">
+      <HintPath>..\packages\SQLitePCLRaw.bundle_green.1.1.0\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLitePCLRaw.batteries_green.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.batteries_v2">
+      <HintPath>..\packages\SQLitePCLRaw.bundle_green.1.1.0\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLitePCLRaw.batteries_v2.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLite-net">
+      <HintPath>..\packages\sqlite-net-pcl.1.2.1\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLite-net.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pages\" />
+    <Folder Include="Database\" />
+    <Folder Include="Modele\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.1.114\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.1.114\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
