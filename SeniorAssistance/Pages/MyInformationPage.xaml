@@ -2,8 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:common="clr-namespace:SeniorAssistance;assembly=SeniorAssistance"
-    x:Class="SeniorAssistance.MedicamentsFormPage"
-    Title="Ajouter/Modifier Medicament">
+    x:Class="SeniorAssistance.MyInformationPage"
+    Title="Mes Informations">
     <ContentPage.Content>
         <Grid x:Name="outerGrid">
             <Grid.ColumnDefinitions>

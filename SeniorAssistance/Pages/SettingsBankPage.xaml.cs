@@ -5,12 +5,11 @@ using Xamarin.Forms;
 
 namespace SeniorAssistance
 {
-	public partial class MedicamentsFormPage : ContentPage
+	public partial class SettingsBankPage : ContentPage
 	{
-		public MedicamentsFormPage()
+		public SettingsBankPage()
 		{
 			InitializeComponent();
-
 		}
 	}
 }

@@ -11,23 +11,16 @@ namespace SeniorAssistance
 		{
 			InitializeComponent();
 			//http://www.c-sharpcorner.com/UploadFile/e04e9a/xamarin-forms-image-button-recipe/
-			//Creating TapGestureRecognizers  
 			var tapImageHome = new TapGestureRecognizer();
-			//Binding events  
 			tapImageHome.Tapped += clickImageHome;
-			//Associating tap events to the image buttons  
 			btnHome.GestureRecognizers.Add(tapImageHome);
 
 			var tapImageSettings = new TapGestureRecognizer();
-			//Binding events  
 			tapImageSettings.Tapped += clickImageSettings;
-			//Associating tap events to the image buttons  
 			btnSettings.GestureRecognizers.Add(tapImageSettings);
 
 			var tapImageCall = new TapGestureRecognizer();
-			//Binding events  
 			tapImageCall.Tapped += clickImageCall;
-			//Associating tap events to the image buttons  
 			btnCall.GestureRecognizers.Add(tapImageCall);
 		}
 
@@ -43,7 +36,7 @@ namespace SeniorAssistance
 
 		void clickImageCall(object sender, EventArgs e)
 		{
-			//Navigation.PushAsync(new PersonsPage());
+			Navigation.PushAsync(new ContactsPage());
 		}
 	}
 }

@@ -15,21 +15,39 @@ namespace SeniorAssistance
 			tapImageInternet.Tapped += clickImageInternet;
 			btnInternet.GestureRecognizers.Add(tapImageInternet);
 
+			var tapImageHospital = new TapGestureRecognizer();
+			tapImageHospital.Tapped += clickImageHospital;
+			btnHospital.GestureRecognizers.Add(tapImageHospital);
+
 			var tapImageMedicaments = new TapGestureRecognizer();
 			tapImageMedicaments.Tapped += clickImageMedicaments;
-			btnHospital.GestureRecognizers.Add(tapImageMedicaments);
+			btnMedicaments.GestureRecognizers.Add(tapImageMedicaments);
+
+			var tapImageGames = new TapGestureRecognizer();
+			tapImageGames.Tapped += clickImageGames;
+			btnGames.GestureRecognizers.Add(tapImageGames);
 
 
 		}
 
 		void clickImageInternet(object sender, EventArgs e)
 		{
-			//Navigation.PushAsync(new HomeLayoutPage());
+			Navigation.PushAsync(new InternetPage());
+		}
+
+		void clickImageHospital(object sender, EventArgs e)
+		{
+			Navigation.PushAsync(new HospitalsPage());
 		}
 
 		void clickImageMedicaments(object sender, EventArgs e)
 		{
-			//Navigation.PushAsync(new MedicamentsPage());
+			Navigation.PushAsync(new MedicamentsPage());
+		}
+
+		void clickImageGames(object sender, EventArgs e)
+		{
+			Navigation.PushAsync(new GamesPage());
 		}
 
 
