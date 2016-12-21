@@ -29,20 +29,20 @@
   </PropertyGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.xaml" />
-    <EmbeddedResource Include="SeniorAssistancePage.xaml" />
-    <EmbeddedResource Include="NavigationToolbar.xaml">
+    <EmbeddedResource Include="Pages\HomeLayoutPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="HomeLayoutPage.xaml">
+    <EmbeddedResource Include="Pages\MedicamentsFormPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="MedicamentsPage.xaml">
+    <EmbeddedResource Include="Pages\MedicamentsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="MedicamentsFormPage.xaml">
+    <EmbeddedResource Include="Pages\NavigationToolbar.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="SettingsPage.xaml">
+    <EmbeddedResource Include="Pages\SeniorAssistancePage.xaml" />
+    <EmbeddedResource Include="Pages\SettingsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
@@ -50,23 +50,23 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SeniorAssistancePage.xaml.cs">
-      <DependentUpon>SeniorAssistancePage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="NavigationToolbar.xaml.cs">
-      <DependentUpon>NavigationToolbar.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="HomeLayoutPage.xaml.cs">
+    <Compile Include="Pages\HomeLayoutPage.xaml.cs">
       <DependentUpon>HomeLayoutPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MedicamentsPage.xaml.cs">
-      <DependentUpon>MedicamentsPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="MedicamentsFormPage.xaml.cs">
+    <Compile Include="Pages\MedicamentsFormPage.xaml.cs">
       <DependentUpon>MedicamentsFormPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SettingsPage.xaml.cs">
+    <Compile Include="Pages\MedicamentsPage.xaml.cs">
+      <DependentUpon>MedicamentsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\NavigationToolbar.xaml.cs">
+      <DependentUpon>NavigationToolbar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SeniorAssistancePage.xaml.cs">
+      <DependentUpon>SeniorAssistancePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -83,6 +83,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Pages\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.1.114\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.1.114\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
