@@ -15,13 +15,13 @@ namespace SeniorAssistance.Model
 
         public DateTime StartDate { get; set; }
 
-        public Boolean enabled { get; set; }
+        public Boolean Enabled { get; set; }
 
         public List<Alert> AlertsMedicament { get; set; }
 
         public override string ToString()
         {
-            return string.Format("[Medicament: ID={0}, IdUser={1}, Name={2}],StartDate={3},enabled={4},AlertsMedicament={4}", ID, IdUser, Name, StartDate, enabled, AlertsMedicament);
+            return string.Format("[Medicament: ID={0}, IdUser={1}, Name={2}],StartDate={3},Enabled={4},AlertsMedicament={4}", ID, IdUser, Name, StartDate, Enabled, AlertsMedicament);
         }
     }    
 }

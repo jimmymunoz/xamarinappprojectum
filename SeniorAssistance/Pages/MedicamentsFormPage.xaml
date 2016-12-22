@@ -22,11 +22,13 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <Label Text="Name:" Grid.Row="0" Grid.Column="0" />
-                <Label Text="Date:" Grid.Row="1" Grid.Column="0" />
-                <Label Text="Tags:" Grid.Row="2" Grid.Column="0" />
-                <Entry Grid.Row="0" Grid.Column="1" />
-                <Entry Grid.Row="1" Grid.Column="1" />
-                <Entry Grid.Row="2" Grid.Column="1" />
+				<Label Text="StartDate:" Grid.Row="1" Grid.Column="0" />
+                <Label Text="Enabled:" Grid.Row="2" Grid.Column="0" />
+                <Entry Keyboard="Default" x:Name="Name" Grid.Row="0" Grid.Column="1" />
+                <DatePicker x:Name="StartDate" Grid.Row="1" Grid.Column="1" VerticalOptions="CenterAndExpand" >
+		         <DatePicker.Format>yyyy-MM-dd</DatePicker.Format>
+				</DatePicker>
+                <Entry x:Name="Enabled" Grid.Row="2" Grid.Column="1" />
 				
 				<Grid x:Name="buttonsGrid"  Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="#CCCCCC">
 	                <Grid.ColumnDefinitions>
