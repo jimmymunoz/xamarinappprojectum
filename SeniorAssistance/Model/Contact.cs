@@ -11,7 +11,7 @@ namespace SeniorAssistance.Model
 
         public string Lastname { get; set; }
        
-        public int Phone { get; set; }
+        public string Phone { get; set; }
 
         public override string ToString()
         {

@@ -10,6 +10,7 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="100" />
             </Grid.ColumnDefinitions>
+            
             <Grid x:Name="innerGrid" Grid.Column="0"  Padding="10">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
@@ -21,22 +22,22 @@
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Label Text="Name:" Grid.Row="0" Grid.Column="0" />
-                <Label Text="Date:" Grid.Row="1" Grid.Column="0" />
-                <Label Text="Tags:" Grid.Row="2" Grid.Column="0" />
-                <Entry Grid.Row="0" Grid.Column="1" />
-                <Entry Grid.Row="1" Grid.Column="1" />
-                <Entry Grid.Row="2" Grid.Column="1" />
-				
-				<Grid x:Name="buttonsGrid"  Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="#CCCCCC">
+                <Label Text="First Name:" Grid.Row="0" Grid.Column="0"  />
+                <Label Text="Last Name:" Grid.Row="1" Grid.Column="0" />
+                <Label Text="Phone" Grid.Row="2" Grid.Column="0" />
+                <Entry Grid.Row="0" Grid.Column="1" x:Name="Firstname" />
+                <Entry Grid.Row="1" Grid.Column="1" x:Name="Lastname"/>
+                <Entry Grid.Row="2" Grid.Column="1" x:Name="Phone" Keyboard="Telephone"/>
+                <Grid x:Name="buttonsGrid"  Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="#CCCCCC">
 	                <Grid.ColumnDefinitions>
 	                    <ColumnDefinition Width="*" />
 	                    <ColumnDefinition Width="*" />
 	                </Grid.ColumnDefinitions>
-	                <Button Text="Annuler" Grid.Column="0" />
-	                <Button Text="Enregistrer" Grid.Column="1" />
+	                <Button x:Name="BtnCancel" Text="Cancel" Grid.Column="0" />
+                    <Button x:Name="BtnSave" Text="Save" Grid.Column="1" />
 	            </Grid>
             </Grid>
+            
             <common:NavigationToolbar Grid.Column="1">
             </common:NavigationToolbar>
         </Grid>
