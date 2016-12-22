@@ -17,11 +17,11 @@
                 </Grid.RowDefinitions>
 				<StackLayout Orientation="Vertical" Grid.Row="0" Padding="10">
 					<ScrollView>
-						<ListView x:Name="ContactsView">
-			                <ListView.ItemTemplate>
+						<ListView x:Name="ContactsView" RowHeight="90">
+							<ListView.ItemTemplate>
 			                    <DataTemplate>
 			                        <ViewCell>
-										<Grid Padding="10">
+										<Grid Padding="5" >
 											<Grid.ColumnDefinitions>
 								                <ColumnDefinition Width="*" />
 								                <ColumnDefinition Width="2*" />
@@ -32,9 +32,10 @@
 												<RowDefinition Height="*" />
 							                </Grid.RowDefinitions>
 											<Image Grid.RowSpan="3" Grid.Row="0" Grid.Column="0"  VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Source="web.png" HeightRequest="80" WidthRequest="80" />
-											<Label Text="{Binding Firstname} {Binding Lastname}" Grid.Row="0" Grid.Column="1" FontAttributes="Bold" FontSize="Medium"/>
+
+											<Label Text="{Binding FullName}" Grid.Row="0" Grid.Column="1" FontAttributes="Bold" FontSize="Medium"/>
 											<Label Text="Type" Grid.Row="1" Grid.Column="1" />
-											<Label Text="{Binding Phone}" Grid.Row="0" Grid.Column="2" />
+											<Label Text="{Binding Phone}" Grid.Row="2" Grid.Column="1" />
 										</Grid>
 			                        </ViewCell>
 			                    </DataTemplate>

@@ -26,7 +26,19 @@ namespace SeniorAssistance
 			{
 				Navigation.PushAsync(new ContactsFromPage());
 			};
+
+			ContactsView.ItemSelected += (sender, e) =>
+			{
+				if (e.SelectedItem != null)
+				{
+					var contact = e.SelectedItem as Contact;
+					var secondPage = new ContactsFromPage();
+					secondPage.BindingContext = contact;
+					Navigation.PushAsync(secondPage);
+				}
+			};
 			RefreshList();
+
 		}
 
 		private void RefreshList()
