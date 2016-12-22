@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using SQLite;
 
-namespace SeniorAssistance.Modele
+namespace SeniorAssistance.Model
 {
     class User : ITable
     {

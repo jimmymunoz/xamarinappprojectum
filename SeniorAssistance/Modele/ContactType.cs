@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using SQLite;
+﻿using SQLite;
 
 
-namespace SeniorAssistance.Modele
+namespace SeniorAssistance.Model
 {
     class ContactType : ITable
     {

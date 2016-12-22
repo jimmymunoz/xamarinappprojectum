@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace SeniorAssistance.Modele
+﻿
+namespace SeniorAssistance.Model
 {
    public interface ITable
     { 

@@ -1,10 +1,8 @@
 ﻿using SQLite;
 using System;
 using System.Collections.Generic;
-using System.Text;
-using SeniorAssistance.Database;
 
-namespace SeniorAssistance.Modele
+namespace SeniorAssistance.Model
 {
     class Medicament : ITable
     {

@@ -1,9 +1,6 @@
 ﻿using SQLite;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace SeniorAssistance.Modele
+namespace SeniorAssistance.Model
 { 
     class NotificationSms : ITable
     {
