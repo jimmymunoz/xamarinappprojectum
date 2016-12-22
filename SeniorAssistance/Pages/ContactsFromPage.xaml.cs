@@ -1,6 +1,4 @@
-﻿using Android.OS;
-using Android.Widget;
-using SeniorAssistance.Database;
+﻿using SeniorAssistance.Database;
 using SeniorAssistance.Model;
 using System;
 using System.Collections.Generic;
