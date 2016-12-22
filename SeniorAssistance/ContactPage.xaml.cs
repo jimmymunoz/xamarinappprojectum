@@ -31,7 +31,7 @@ namespace SeniorAssistance
 				{
 					Firstname = Item.Text,
 					Lastname = Item1.Text,
-					Phone = Int32.Parse(Item2.Text),
+					Phone = Item2.Text,
 
 				});
 
