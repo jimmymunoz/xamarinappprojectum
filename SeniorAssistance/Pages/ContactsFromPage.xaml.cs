@@ -1,17 +1,17 @@
-﻿using Android.OS;
-using Android.Widget;
-using SeniorAssistance.Database;
+﻿using SeniorAssistance.Database;
 using SeniorAssistance.Model;
 using System;
 using System.Collections.Generic;
 
 using Xamarin.Forms;
+using static Android.Resource;
 
 namespace SeniorAssistance
 {
 	public partial class ContactsFromPage : ContentPage
 	{
-        CrudDatabase database;
+		CrudDatabase database;
+
         public ContactsFromPage()
 		{
 			InitializeComponent();
@@ -20,21 +20,26 @@ namespace SeniorAssistance
             BtnSave.Clicked += (sender, e) =>
             {
                 if (string.IsNullOrWhiteSpace(Firstname.Text) || string.IsNullOrWhiteSpace(Lastname.Text) || string.IsNullOrWhiteSpace(Phone.Text))
-                
-                    //DisplayAlert(" ", " + " delete context action", "OK");
-                    return;
-                
                     
-                database.SaveItem(new Contact
+                    return;
+                Contact item = new Contact
                 {
                     Firstname = Firstname.Text,
                     Lastname = Lastname.Text,
-                    Phone = Phone.Text,              
-                });
-                //             
+                    Phone = Phone.Text,
+                };
+                if (! string.IsNullOrWhiteSpace(ID.Text))
+                    item.ID = Int32.Parse(ID.Text);
+                
+                database.SaveItem(item);
                 Navigation.PopAsync();
             };
-   
+
+			BtnCancel.Clicked += (sender, e) =>
+			{
+				Navigation.PopAsync();
+			};
         }
+
 	}
 }

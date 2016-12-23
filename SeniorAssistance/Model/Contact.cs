@@ -10,6 +10,8 @@ namespace SeniorAssistance.Model
         public string Firstname { get; set; }
 
         public string Lastname { get; set; }
+
+		public string FullName => string.Format("{0} {1}", Firstname, Lastname);
        
         public string Phone { get; set; }
 

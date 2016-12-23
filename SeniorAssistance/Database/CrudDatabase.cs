@@ -23,13 +23,13 @@ namespace SeniorAssistance.Database
 
         }
         public int SaveItem<T>(T item) where T : ITable
-        {
-            /* if (item.ID != 0)
-             {
-                 Connection.Update(item);
-                 return item.ID;
-
-             }*/
+        { 
+            if (item.ID > 0)
+            {
+                System.Diagnostics.Debug.WriteLine("Update: " + item.ToString());
+                return Connection.Update(item);
+            }
+            System.Diagnostics.Debug.WriteLine("Insert: " + item.ToString());
             return Connection.Insert(item);
         }
         public T GetItem<T>(int id) where T : ITable, new()
