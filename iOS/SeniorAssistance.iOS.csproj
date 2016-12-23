@@ -150,6 +150,26 @@
     <BundleResource Include="Resources\cogwheel.png" />
     <BundleResource Include="Resources\telephone.png" />
     <BundleResource Include="Resources\web.png" />
+    <BundleResource Include="Resources\alarm.png" />
+    <BundleResource Include="Resources\ambulance.png" />
+    <BundleResource Include="Resources\back.png" />
+    <BundleResource Include="Resources\contactbook.png" />
+    <BundleResource Include="Resources\family.png" />
+    <BundleResource Include="Resources\home.png" />
+    <BundleResource Include="Resources\hospital.png" />
+    <BundleResource Include="Resources\human-brain.png" />
+    <BundleResource Include="Resources\information.png" />
+    <BundleResource Include="Resources\internet.png" />
+    <BundleResource Include="Resources\medical-1.png" />
+    <BundleResource Include="Resources\medical.png" />
+    <BundleResource Include="Resources\medicament.png" />
+    <BundleResource Include="Resources\notes.png" />
+    <BundleResource Include="Resources\nurse.png" />
+    <BundleResource Include="Resources\nurse2.png" />
+    <BundleResource Include="Resources\police.png" />
+    <BundleResource Include="Resources\rubbish-bin.png" />
+    <BundleResource Include="Resources\save.png" />
+    <BundleResource Include="Resources\save2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.1.114\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.1.114\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
