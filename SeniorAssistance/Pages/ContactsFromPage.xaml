@@ -34,15 +34,17 @@
 	                <Grid.ColumnDefinitions>
 	                    <ColumnDefinition Width="*" />
 	                    <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
 	                </Grid.ColumnDefinitions>
-	                <Button x:Name="BtnCancel" Text="Cancel" Grid.Column="0" />
-                    <Button x:Name="BtnSave" Text="Save" Grid.Column="1" />
+                    <Button x:Name="BtnCancel" Text="Cancel" Grid.Column="0" Style="{StaticResource buttonStyle}" />
+                    <Button x:Name="BtnSave" Text="Save" Grid.Column="1" Style="{StaticResource buttonStyle}" />
+                    <Button x:Name="BtnDelete" Text="Delete" Grid.Column="2" Style="{StaticResource buttonStyle}"/>
                    
 	            </Grid>
             </Grid>
-           
+
             
-                
+
 
             <common:NavigationToolbar Grid.Column="1">
             </common:NavigationToolbar>

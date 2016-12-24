@@ -10,14 +10,16 @@ namespace SeniorAssistance.Model
         public string Firstname { get; set; }
 
         public string Lastname { get; set; }
+        
+        public string FullName => string.Format("{0} {1}", Firstname, Lastname);
 
-		public string FullName => string.Format("{0} {1}", Firstname, Lastname);
-       
+        public string TypeContact { get; set; }
+
         public string Phone { get; set; }
 
         public override string ToString()
         {
-            return string.Format("[Contact: ID={0}, firstName={1}, lastName={2}],phone={2}]", ID, Firstname, Lastname, Phone);
+            return string.Format("[Contact: ID={0}, firstName={1}, lastName={2},TypeContact {3},phone={4}]", ID, Firstname, Lastname, TypeContact, Phone);
         }
     }
 }

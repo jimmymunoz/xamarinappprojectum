@@ -34,7 +34,7 @@
 											<Image Grid.RowSpan="3" Grid.Row="0" Grid.Column="0"  VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Source="web.png" HeightRequest="80" WidthRequest="80" />
 
 											<Label Text="{Binding FullName}" Grid.Row="0" Grid.Column="1" FontAttributes="Bold" FontSize="Medium"/>
-											<Label Text="Type" Grid.Row="1" Grid.Column="1" />
+                                            <Label Text="{Binding TypeContact}" Grid.Row="1" Grid.Column="1" />
 											<Label Text="{Binding Phone}" Grid.Row="2" Grid.Column="1" />
 										</Grid>
 			                        </ViewCell>

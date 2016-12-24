@@ -16,6 +16,8 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
 					<RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
@@ -24,21 +26,42 @@
                 <Label Text="Name:" Grid.Row="0" Grid.Column="0" />
 				<Label Text="StartDate:" Grid.Row="1" Grid.Column="0" />
                 <Label Text="Enabled:" Grid.Row="2" Grid.Column="0" />
-                <Entry Keyboard="Default" x:Name="Name" Grid.Row="0" Grid.Column="1" />
+                <Label Text="Add Alert:" Grid.Row="3" Grid.Column="0" />
+                <Entry Text="{Binding Name}" Grid.Row="0" Grid.Column="1" x:Name="Name" />
+                
+                
                 <DatePicker x:Name="StartDate" Grid.Row="1" Grid.Column="1" VerticalOptions="CenterAndExpand" >
 		         <DatePicker.Format>yyyy-MM-dd</DatePicker.Format>
 				</DatePicker>
                 <Entry x:Name="Enabled" Grid.Row="2" Grid.Column="1" />
-				
-				<Grid x:Name="buttonsGrid"  Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="#CCCCCC">
+                <Entry x:Name="Alert" Placeholder="Add Alert" Grid.Row="3" Grid.Column="1"  />
+                <Grid x:Name="ListAlert"  Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="#000000">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <ListView x:Name="ItemList" Grid.ColumnSpan="2">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <StackLayout Padding="15,0">
+                                            <Label Text="{Binding Alert}" FontAttributes="Bold"
+                       FontSize="Medium"/>
+                                        </StackLayout>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                </Grid>
+                <Grid x:Name="buttonsGrid"  Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="#CCCCCC">
 	                <Grid.ColumnDefinitions>
 	                    <ColumnDefinition Width="*" />
 	                    <ColumnDefinition Width="*" />
 	                </Grid.ColumnDefinitions>
-	                <Button Text="Annuler" Grid.Column="0" />
-	                <Button Text="Enregistrer" Grid.Column="1" />
+                    <Button  x:Name="BtnCancel" Text ="Cancel" Grid.Column="0" />
+                    <Button  x:Name="BtnSave" Text = "Save" Grid.Column="1" />
 	            </Grid>
             </Grid>
+                        
             <common:NavigationToolbar Grid.Column="1">
             </common:NavigationToolbar>
         </Grid>
