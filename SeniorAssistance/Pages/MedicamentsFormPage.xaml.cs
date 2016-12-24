@@ -9,48 +9,72 @@ namespace SeniorAssistance
 {
 	public partial class MedicamentsFormPage : ContentPage
 	{
-        CrudDatabase database, database1;
+        CrudDatabase database;
         ObservableCollection<ITable> Items1 { get; set; }
 
         public MedicamentsFormPage()
         {
             InitializeComponent();
-            database = new MedicamentDatabase();
-            database1 = new AlertDatabase();
 
+            database = new MedicamentDatabase();
             Items1 = new ObservableCollection<ITable>();
             // Liste des alert
-            ItemList.ItemsSource = Items1;
+            //ItemList.ItemsSource = Items1;
 
             
-            BtnSave.Clicked += (sender, e) =>
+            BtnSave.Clicked += async (sender, e) =>
             {
-                /*
-                Alert alert = new Alert
-                {
-
-                };
-
-                if (string.IsNullOrWhiteSpace(Name.Text) || string.IsNullOrWhiteSpace(StartDate.Text) || string.IsNullOrWhiteSpace(Enabled.Text))
-
+                if (string.IsNullOrWhiteSpace(Name.Text) || string.IsNullOrWhiteSpace(Enabled.Text))
                     return;
                 Medicament item = new Medicament
                 {
                     Name = Name.Text,
-                    StartDate = StartDate.Text,
-                    Enabled = Convert.ToBoolean(Enabled.Text),
-                    AlertsMedicament = new List<Alert>Items1;
+                    //StartDate = StartDate.BindingContext
+                    StartDate = ((DateTime)StartDate.Date),
+                    Enabled = Enabled.Text,
+
                 };
                 if (!string.IsNullOrWhiteSpace(ID.Text))
                     item.ID = Int32.Parse(ID.Text);
 
                 database.SaveItem(item);
-                Navigation.PopAsync();*/
+                var answer = await DisplayAlert("Exit", "Want to add alert for this drug ", "Yes", "No");
+                if (answer)
+                {
+                    var secondPage = new AlertFormPage();
+                    secondPage.BindingContext = item;
+                    await Navigation.PushAsync(secondPage);                    
+                }
+                else
+                await Navigation.PushAsync(new MedicamentsPage());
             };
             
             BtnCancel.Clicked += (sender, e) =>
             {
-                Navigation.PopAsync();
+                Navigation.PushAsync(new MedicamentsPage());
+            };
+            // Pour le delete 
+            BtnDelete.Clicked += async (sender, e) =>
+            {
+                /*
+                    * Normalement :c'est comme ça,malheureusement la methode getitem cast le type de l'item 
+                   Contact contactToDelete= database.GetItem<Contact>(Int32.Parse(ID.Text));
+                   database.DeleteItem(item);*/
+
+                var answer = await DisplayAlert("Exit", "Do you wan't to delet ", "Yes", "No");
+                if (answer)
+                {
+                    Medicament item = new Medicament
+                    {
+                        Name = Name.Text,                        
+                        StartDate = ((DateTime)StartDate.Date),
+                        Enabled = Enabled.Text,
+                    };
+                    item.ID = Int32.Parse(ID.Text);
+                    database.Connection.Delete(item);
+
+                    await Navigation.PushAsync(new MedicamentsPage());
+                }
             };
         }
 

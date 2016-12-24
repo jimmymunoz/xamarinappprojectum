@@ -18,8 +18,8 @@ namespace SeniorAssistance
 		{
 			database = new ConctactDatabase();
 			InitializeComponent();
-
-			ListContacts = new ObservableCollection<ITable>();
+            RefreshList();
+            ListContacts = new ObservableCollection<ITable>();
 			ContactsView.ItemsSource = ListContacts;
 
 			btnAdd.Clicked += (sender, e) =>

@@ -1,5 +1,5 @@
 ﻿using SQLite;
-
+using System;
 
 namespace SeniorAssistance.Model
 {
@@ -10,7 +10,7 @@ namespace SeniorAssistance.Model
 
         public int Idmedicament { get; set; }
 
-        public float Hour { get; set; }
+        public DateTime Hour { get; set; }
 
         public override string ToString()
         {
