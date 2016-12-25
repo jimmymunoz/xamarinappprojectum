@@ -5,7 +5,7 @@ using Xamarin.Forms;
 
 namespace SeniorAssistance.Model
 {
-    class Medicament : ITable
+    public class Medicament : ITable
     {
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }      
@@ -14,7 +14,7 @@ namespace SeniorAssistance.Model
 
         public DateTime StartDate { get; set; }
 
-        public string Enabled { get; set; }        
+        public int Enabled { get; set; }      
 
         public override string ToString()
         {

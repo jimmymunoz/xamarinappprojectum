@@ -11,17 +11,17 @@ namespace SeniorAssistance
 {
 	public partial class MedicamentsPage : ContentPage
 	{
-        CrudDatabase database;
+        MedicamentDatabase database;
 
-        ObservableCollection<ITable> ListMedicaments { get; set; }
+        ObservableCollection<Medicament> ListMedicaments { get; set; }
 
         public MedicamentsPage()
 		{
-            database = new ConctactDatabase();
+            database = new MedicamentDatabase();
             InitializeComponent();            
-            ListMedicaments = new ObservableCollection<ITable>();
+            ListMedicaments = new ObservableCollection<Medicament>();
             MedicamentsView.ItemsSource = ListMedicaments;
-            RefreshList();
+           // RefreshList();
 
             btnAdd.Clicked += (sender, e) =>
 			{
@@ -37,9 +37,15 @@ namespace SeniorAssistance
                     Navigation.PushAsync(secondPage);
                 }
             };
-
             RefreshList();
+        }
 
+        protected override void OnAppearing()
+        {
+            
+            base.OnAppearing();
+            System.Diagnostics.Debug.WriteLine("*****Here*****");
+            
         }
 
         private void RefreshList()

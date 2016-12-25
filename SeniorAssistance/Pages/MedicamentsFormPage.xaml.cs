@@ -9,15 +9,15 @@ namespace SeniorAssistance
 {
 	public partial class MedicamentsFormPage : ContentPage
 	{
-        CrudDatabase database;
-        ObservableCollection<ITable> Items1 { get; set; }
+        MedicamentDatabase database;
+        ObservableCollection<Medicament> Items1 { get; set; }
 
         public MedicamentsFormPage()
         {
             InitializeComponent();
 
-            database = new MedicamentDatabase();
-            Items1 = new ObservableCollection<ITable>();
+            database= new MedicamentDatabase();
+            Items1 = new ObservableCollection<Medicament>();
             // Liste des alert
             //ItemList.ItemsSource = Items1;
 
@@ -26,24 +26,29 @@ namespace SeniorAssistance
             {
                 if (string.IsNullOrWhiteSpace(Name.Text) || string.IsNullOrWhiteSpace(Enabled.Text))
                     return;
-                Medicament item = new Medicament
+                Medicament medicament = new Medicament
                 {
                     Name = Name.Text,
                     //StartDate = StartDate.BindingContext
-                    StartDate = ((DateTime)StartDate.Date),
-                    Enabled = Enabled.Text,
+                    StartDate = StartDate.Date,
+                    Enabled = Int32.Parse(Enabled.Text),
 
-                };
+            };
                 if (!string.IsNullOrWhiteSpace(ID.Text))
-                    item.ID = Int32.Parse(ID.Text);
+                    medicament.ID = Int32.Parse(ID.Text);
 
-                database.SaveItem(item);
-                var answer = await DisplayAlert("Exit", "Want to add alert for this drug ", "Yes", "No");
+                database.SaveItem(medicament);
+
+                var answer = await DisplayAlert("Exit", "Want to add alert for this drug " + medicament, "Yes", "No");
                 if (answer)
                 {
-                    var secondPage = new AlertFormPage();
-                    secondPage.BindingContext = item;
-                    await Navigation.PushAsync(secondPage);                    
+                    //item = e.SelectedItem as Medicament;
+                    //var secondPage = new AlertFormPage();
+                    //secondPage.BindingContext = medicament;
+                    await Navigation.PushAsync(new AlertFormPage(medicament));
+
+
+                  
                 }
                 else
                 await Navigation.PushAsync(new MedicamentsPage());
@@ -68,7 +73,7 @@ namespace SeniorAssistance
                     {
                         Name = Name.Text,                        
                         StartDate = ((DateTime)StartDate.Date),
-                        Enabled = Enabled.Text,
+                        Enabled = Int32.Parse(Enabled.Text)
                     };
                     item.ID = Int32.Parse(ID.Text);
                     database.Connection.Delete(item);

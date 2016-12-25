@@ -16,7 +16,7 @@ namespace SeniorAssistance.Database
 
         public CrudDatabase()
         {
-            var location = "xamarincrud.db3";
+            var location = "xamarincrud9.db3";
             location = System.IO.Path.Combine(Root, location);
             Connection = new SQLiteConnection(location);
             initDababase();  //  Connection.CreateTable<Contact>();

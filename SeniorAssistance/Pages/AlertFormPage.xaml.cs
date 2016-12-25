@@ -1,56 +1,66 @@
-﻿using Java.Sql;
-using SeniorAssistance.Database;
-using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using SeniorAssistance.Database;
 using SeniorAssistance.Model;
 using Xamarin.Forms;
+using System;
 
 namespace SeniorAssistance
 {
     public partial class AlertFormPage : ContentPage
     {
-        CrudDatabase database;
+        AlertDatabase database;
 
-        ObservableCollection<ITable> ListContacts { get; set; }
+        ObservableCollection<Alert> ListAlerts { get; set; }
 
-        public AlertFormPage()
+        
+        public AlertFormPage(Medicament medicament)
         {
-            database = new ConctactDatabase();
+
             InitializeComponent();
+            database = new AlertDatabase();
+            ListAlerts = new ObservableCollection<Alert>();
 
-            //Items = new ObservableCollection<ITable>();
-
-            //ItemList.ItemsSource = Items;
+            AlertsView.ItemsSource = ListAlerts;
 
             Save.Clicked += (sender, e) =>
             {
+                /*
+                if (!string.IsNullOrWhiteSpace(Hour.Text))
+                    return;
+                */
+                //item.ID = Int32.Parse(Idmedicament.Text);
 
                 Alert item = new Alert
                 {
-                    Idmedicament = int.Parse(ID.Text),
-                    Hour = Hour.Date,
+                    Idmedicament = medicament.ID,
+                    Hour = Hour.Time,
                 };
-                if (!string.IsNullOrWhiteSpace(ID.Text))
-                    item.ID = Int32.Parse(ID.Text);
+
+                /*
+                if (!string.IsNullOrWhiteSpace(Idmedicament.Text))
+                    item.ID = Int32.Parse(Idmedicament.Text);
+                */
+
+                database.SaveItem(item);
             };
+            // RefreshList();
         }
         /*
-        private void RefreshList()
-        {
-            Items.Clear();
+                private void RefreshList()
+                {
+                    ListAlerts.Clear();
+                    int id = Int32.Parse(ID.Text);
 
-            var items = (from i in database.GetItems<Alert>()
-                         where i.Idmedicament = 
-                         orderby i.Created descending
-                         select i);
+                    var items = (from i in database.GetItems<Alert>()
+                                 where i.Idmedicament == id
+                                 select i);
 
-            foreach (var item in items)
-                Items.Add(item);
-        }
-        */
+                    foreach (var item in items)
+                        ListAlerts.Add(item);
+                }
+                */
 
 
     }

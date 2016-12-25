@@ -10,16 +10,15 @@ namespace SeniorAssistance
 {
 	public partial class ConfigContactsPage : ContentPage
 	{
-		CrudDatabase database;
+        ConctactDatabase database;
 
-		ObservableCollection<ITable> ListContacts { get; set; }
+		ObservableCollection<Contact> ListContacts { get; set; }
 
 		public ConfigContactsPage()
 		{
 			database = new ConctactDatabase();
 			InitializeComponent();
-            RefreshList();
-            ListContacts = new ObservableCollection<ITable>();
+            ListContacts = new ObservableCollection<Contact>();
 			ContactsView.ItemsSource = ListContacts;
 
 			btnAdd.Clicked += (sender, e) =>

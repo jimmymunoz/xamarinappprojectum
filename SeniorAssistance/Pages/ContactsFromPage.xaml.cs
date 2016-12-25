@@ -10,7 +10,7 @@ namespace SeniorAssistance
 {
 	public partial class ContactsFromPage : ContentPage
 	{
-		CrudDatabase database;
+        ConctactDatabase database;
 
         public ContactsFromPage()
 		{
