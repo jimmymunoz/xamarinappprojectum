@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SeniorAssistance.Database;
+using System;
 using System.Collections.Generic;
 
 using Xamarin.Forms;
@@ -7,11 +8,12 @@ namespace SeniorAssistance
 {
 	public partial class HomeLayoutPage : ContentPage
 	{
-		public HomeLayoutPage()
+   
+        public HomeLayoutPage()
 		{
 			InitializeComponent();
 
-			var tapImageInternet = new TapGestureRecognizer();
+            var tapImageInternet = new TapGestureRecognizer();
 			tapImageInternet.Tapped += clickImageInternet;
 			btnInternet.GestureRecognizers.Add(tapImageInternet);
 

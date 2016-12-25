@@ -157,17 +157,17 @@
     <BundleResource Include="Resources\family.png" />
     <BundleResource Include="Resources\home.png" />
     <BundleResource Include="Resources\hospital.png" />
-    <BundleResource Include="Resources\human-brain.png" />
+    <BundleResource Include="Resources\humanbrain.png" />
     <BundleResource Include="Resources\information.png" />
     <BundleResource Include="Resources\internet.png" />
-    <BundleResource Include="Resources\medical-1.png" />
+    <BundleResource Include="Resources\medical1.png" />
     <BundleResource Include="Resources\medical.png" />
     <BundleResource Include="Resources\medicament.png" />
     <BundleResource Include="Resources\notes.png" />
     <BundleResource Include="Resources\nurse.png" />
     <BundleResource Include="Resources\nurse2.png" />
     <BundleResource Include="Resources\police.png" />
-    <BundleResource Include="Resources\rubbish-bin.png" />
+    <BundleResource Include="Resources\rubbishbin.png" />
     <BundleResource Include="Resources\save.png" />
     <BundleResource Include="Resources\save2.png" />
   </ItemGroup>

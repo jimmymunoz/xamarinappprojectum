@@ -29,6 +29,9 @@
   </PropertyGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.xaml" />
+    <EmbeddedResource Include="Pages\AlertFormPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pages\HomeLayoutPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -78,6 +81,9 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Pages\AlertFormPage.xaml.cs">
+      <DependentUpon>AlertFormPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\HomeLayoutPage.xaml.cs">
       <DependentUpon>HomeLayoutPage.xaml</DependentUpon>
     </Compile>
@@ -116,6 +122,9 @@
     </Compile>
     <Compile Include="Pages\ContactsPage.xaml.cs">
       <DependentUpon>ContactsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ConfigContactsPage.xaml.cs">
+      <DependentUpon>ConfigContactsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\ConfigContactsPage.xaml.cs">
       <DependentUpon>ConfigContactsPage.xaml</DependentUpon>
@@ -171,7 +180,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.1.114\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.1.114\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
 </Project>

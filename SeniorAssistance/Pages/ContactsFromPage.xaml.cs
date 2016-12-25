@@ -2,40 +2,71 @@
 using SeniorAssistance.Model;
 using System;
 using System.Collections.Generic;
-
+using System.Diagnostics;
 using Xamarin.Forms;
+//using static Android.Resource;
 
 namespace SeniorAssistance
 {
 	public partial class ContactsFromPage : ContentPage
 	{
-		CrudDatabase database;
+        ConctactDatabase database;
 
         public ContactsFromPage()
 		{
 			InitializeComponent();
             database = new ConctactDatabase();
           
-            BtnSave.Clicked += (sender, e) =>
+            BtnSave.Clicked += async (sender, e) =>
             {
                 if (string.IsNullOrWhiteSpace(Firstname.Text) || string.IsNullOrWhiteSpace(Lastname.Text) || string.IsNullOrWhiteSpace(Phone.Text))
-                    //DisplayAlert(" ", " + " delete context action", "OK");
-                    return;
-                   
-                database.SaveItem(new Contact
+                return;
+
+                string action = await DisplayActionSheet("Type Of this Contact", "Cancel", null, "Nurse", "Doctor", "Mother", "Sister", "Daughter", "Husband", "Son", "grandchild", "Other");
+                Debug.WriteLine("Action: " + action);
+
+                Contact item = new Contact
                 {
-                    ID = ID.Text,
-					Firstname = Firstname.Text,
+                    Firstname = Firstname.Text,
                     Lastname = Lastname.Text,
-                    Phone = Phone.Text,              
-                });
-                Navigation.PopAsync();
+                    Phone = Phone.Text,
+                };
+                item.TypeContact = action;
+
+                if (!string.IsNullOrWhiteSpace(ID.Text))
+                item.ID = Int32.Parse(ID.Text);
+
+                database.SaveItem(item);                
+                await Navigation.PushAsync(new ConfigContactsPage());
+            };
+			
+           BtnDelete.Clicked += async (sender, e) =>
+            {
+                /*
+                    * Normalement :c'est comme ça,malheureusement la methode getitem cast le type de l'item 
+                   Contact contactToDelete= database.GetItem<Contact>(Int32.Parse(ID.Text));
+                   database.DeleteItem(item);*/ 
+
+                var answer = await DisplayAlert("Exit", "Do you wan't to delet this Contact", "Yes", "No");
+                if (answer)
+                {                   
+                Contact item = new Contact
+                {
+                    Firstname = Firstname.Text,
+                    Lastname = Lastname.Text,
+                    Phone = Phone.Text,
+                };
+                item.ID = Int32.Parse(ID.Text);
+                database.Connection.Delete(item);
+
+                await Navigation.PushAsync(new ConfigContactsPage());
+                }            
             };
 
-			BtnCancel.Clicked += (sender, e) =>
-			{
-				Navigation.PopAsync();
-			};
+            BtnCancel.Clicked += (sender, e) =>
+            {
+                Navigation.PopAsync();
+            };
         }
 
 	}
