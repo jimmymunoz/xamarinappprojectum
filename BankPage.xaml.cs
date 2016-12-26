@@ -6,14 +6,13 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 
-namespace SeniorAssistance
+namespace SeniorAssistance.Pages
 {
-    public partial class SettingsBankPage : ContentPage
+    public partial class BankPage : ContentPage
     {
-        public SettingsBankPage()
+        public BankPage()
         {
             InitializeComponent();
-
             var tapImageInternet = new TapGestureRecognizer();
             tapImageInternet.Tapped += clickImageInternet;
             btnBNPParibas.GestureRecognizers.Add(tapImageInternet);

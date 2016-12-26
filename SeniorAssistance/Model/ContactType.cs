@@ -11,7 +11,7 @@ namespace SeniorAssistance.Model
         public string Image { get; set; }
 
         public string Name { get; set; }
-
+       
         public override string ToString()
         {
             return string.Format("[ContactType: ID={0}, Image={1}, Name={2}]", ID, Image, Name);

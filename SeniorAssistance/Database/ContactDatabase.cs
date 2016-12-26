@@ -6,7 +6,7 @@ using SeniorAssistance.Model;
 
 namespace SeniorAssistance.Database
 {
-  public class ConctactDatabase : CrudDatabase
+  public class ContactDatabase : CrudDatabase
     {
         protected override void initDababase()
         {

@@ -1,5 +1,4 @@
 ﻿using System.Linq;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using SeniorAssistance.Database;
 using SeniorAssistance.Model;
@@ -12,15 +11,21 @@ namespace SeniorAssistance
     {
         AlertDatabase database;
 		ObservableCollection<Alert> ListAlerts { get; set; }
-
+        public Medicament medicament;
         
         public AlertFormPage(Medicament medicament)
         {
 			InitializeComponent();
+            this.medicament = medicament;
             database = new AlertDatabase();
             ListAlerts = new ObservableCollection<Alert>();
-
             AlertsView.ItemsSource = ListAlerts;
+
+          /*  var tapImageMedicaments = new TapGestureRecognizer();
+            tapImageMedicaments.Tapped += clickImageDelete;
+            btnAlertDelete.GestureRecognizers.Add(tapImageMedicaments);*/
+
+            RefreshList(medicament);
 
             Save.Clicked += (sender, e) =>
             {
@@ -34,19 +39,34 @@ namespace SeniorAssistance
                 {
                     Idmedicament = medicament.ID,
 					Hour = Hour.Time.ToString(),
-                };
-
-                /*
-                if (!string.IsNullOrWhiteSpace(Idmedicament.Text))
-                    item.ID = Int32.Parse(Idmedicament.Text);
-                */
-
+               
+                };                                              
                 database.SaveItem(item);
 				RefreshList(medicament);
             };
-            RefreshList(medicament);
+           
+                
+          
         }
-        
+
+        void OnTapGestureRecognizerTappedDelete(object sender, EventArgs arg)
+        {
+            AlertsView.ItemTapped += (sende, args) =>
+             {
+                 var bird = args.Item;
+                 database.Connection.Delete(bird);
+                 RefreshList(medicament);
+             };
+
+            RefreshList(medicament);
+
+        }
+        void clickImageDelete(object sender, EventArgs e)
+        {
+         
+               
+        }
+
         private void RefreshList(Medicament medicament)
         {
             ListAlerts.Clear();

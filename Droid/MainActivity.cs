@@ -22,7 +22,7 @@ namespace SeniorAssistance.Droid
 			base.OnCreate(bundle);
 
 			global::Xamarin.Forms.Forms.Init(this, bundle);
-			ConctactDatabase.Root = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+			ContactDatabase.Root = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
 
 			LoadApplication(new App());
 		}
