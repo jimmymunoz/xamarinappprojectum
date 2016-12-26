@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SeniorAssistance.Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 
-namespace SeniorAssistance.Pages
+namespace SeniorAssistance
 {
     public partial class SettingsBankPage : ContentPage
     {
@@ -14,48 +15,63 @@ namespace SeniorAssistance.Pages
         {
             InitializeComponent();
 
-            var tapImageInternet = new TapGestureRecognizer();
-            tapImageInternet.Tapped += clickImageInternet;
-            btnBNPParibas.GestureRecognizers.Add(tapImageInternet);
+            var tapImagebtnBNPParibas = new TapGestureRecognizer();
+            tapImagebtnBNPParibas.Tapped += clickImageBnp;
+            btnBNPParibas.GestureRecognizers.Add(tapImagebtnBNPParibas);
 
-            var tapImageHospital = new TapGestureRecognizer();
-            tapImageHospital.Tapped += clickImageHospital;
-            btnCréditagricole.GestureRecognizers.Add(tapImageHospital);
+            var tapImageCréditagricole = new TapGestureRecognizer();
+            tapImageCréditagricole.Tapped += clickImageCreditagricole;
+            btnCréditagricole.GestureRecognizers.Add(tapImageCréditagricole);
 
-            var tapImageMedicaments = new TapGestureRecognizer();
-            tapImageMedicaments.Tapped += clickImageMedicaments;
-            btnSociétégénérale.GestureRecognizers.Add(tapImageMedicaments);
+            var tapImageSociétégénérale = new TapGestureRecognizer();
+            tapImageSociétégénérale.Tapped += clickImageSocietegenrale;
+            btnSociétégénérale.GestureRecognizers.Add(tapImageSociétégénérale);
 
-
-            var tapImageGames = new TapGestureRecognizer();
-            tapImageGames.Tapped += clickImageGames;
-            btnCréditmutuelCIC.GestureRecognizers.Add(tapImageGames);
-
+            var tapImageCréditmutuelCIC = new TapGestureRecognizer();
+            tapImageCréditmutuelCIC.Tapped += clickImageCréditmutuelCIC;
+            btnCréditmutuelCIC.GestureRecognizers.Add(tapImageCréditmutuelCIC);
+            
+            var tapImagebtnBPCE = new TapGestureRecognizer();
+            tapImagebtnBPCE.Tapped += clickImagbtnBPCE;
+            btnBPCE.GestureRecognizers.Add(tapImagebtnBPCE);
+           
+            var tapImagebtnLaPoste = new TapGestureRecognizer();
+            tapImagebtnLaPoste.Tapped += clickImagetnLaPoste;
+            btnLaPoste.GestureRecognizers.Add(tapImagebtnLaPoste);
 
         }
 
-        void clickImageInternet(object sender, EventArgs e)
+        void clickImageBnp(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new WebViewInternet("https://www.google.fr/"));
+            Navigation.PushAsync(new WebViewInternet("https://group.bnpparibas/"));
         }
 
-        void clickImageHospital(object sender, EventArgs e)
+        void clickImageCreditagricole(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new HospitalsPage());
+            Navigation.PushAsync(new WebViewInternet("https://www.credit-agricole.com/"));
         }
 
-        void clickImageMedicaments(object sender, EventArgs e)
+        void clickImageSocietegenrale(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new MedicamentsPage());
+            Navigation.PushAsync(new WebViewInternet("https://www.societegenerale.com/fr/accueil"));
         }
 
-        void clickImageGames(object sender, EventArgs e)
+        void clickImagbtnBPCE(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new GamesPage());
+            
+            Navigation.PushAsync(new WebViewInternet("http://www.groupebpce.fr/"));
         }
 
 
+        void clickImageCréditmutuelCIC(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new WebViewInternet("https://www.creditmutuel.fr/groupe/fr/index.html"));
+        }
 
+        void clickImagetnLaPoste(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new WebViewInternet("http://www.laposte.fr/particulier"));
+        }
 
     }
 }
