@@ -1,4 +1,5 @@
 ﻿using SeniorAssistance.Database;
+using SeniorAssistance.Pages;
 using System;
 using System.Collections.Generic;
 
@@ -24,8 +25,9 @@ namespace SeniorAssistance
 			var tapImageMedicaments = new TapGestureRecognizer();
 			tapImageMedicaments.Tapped += clickImageMedicaments;
 			btnMedicaments.GestureRecognizers.Add(tapImageMedicaments);
+            
 
-			var tapImageGames = new TapGestureRecognizer();
+            var tapImageGames = new TapGestureRecognizer();
 			tapImageGames.Tapped += clickImageGames;
 			btnGames.GestureRecognizers.Add(tapImageGames);
 
@@ -34,7 +36,7 @@ namespace SeniorAssistance
 
 		void clickImageInternet(object sender, EventArgs e)
 		{
-			Navigation.PushAsync(new InternetPage());
+			Navigation.PushAsync(new WebViewInternet("https://www.google.fr/"));
 		}
 
 		void clickImageHospital(object sender, EventArgs e)

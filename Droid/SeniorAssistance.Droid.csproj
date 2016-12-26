@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -128,6 +128,26 @@
     <AndroidResource Include="Resources\drawable\cogwheel.png" />
     <AndroidResource Include="Resources\drawable\telephone.png" />
     <AndroidResource Include="Resources\drawable\web.png" />
+    <AndroidResource Include="Resources\drawable\alarm.png" />
+    <AndroidResource Include="Resources\drawable\ambulance.png" />
+    <AndroidResource Include="Resources\drawable\back.png" />
+    <AndroidResource Include="Resources\drawable\contactbook.png" />
+    <AndroidResource Include="Resources\drawable\family.png" />
+    <AndroidResource Include="Resources\drawable\home.png" />
+    <AndroidResource Include="Resources\drawable\hospital.png" />
+    <AndroidResource Include="Resources\drawable\humanbrain.png" />
+    <AndroidResource Include="Resources\drawable\information.png" />
+    <AndroidResource Include="Resources\drawable\internet.png" />
+    <AndroidResource Include="Resources\drawable\medical1.png" />
+    <AndroidResource Include="Resources\drawable\medical.png" />
+    <AndroidResource Include="Resources\drawable\medicament.png" />
+    <AndroidResource Include="Resources\drawable\notes.png" />
+    <AndroidResource Include="Resources\drawable\nurse.png" />
+    <AndroidResource Include="Resources\drawable\nurse2.png" />
+    <AndroidResource Include="Resources\drawable\police.png" />
+    <AndroidResource Include="Resources\drawable\rubbishbin.png" />
+    <AndroidResource Include="Resources\drawable\save.png" />
+    <AndroidResource Include="Resources\drawable\save2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets')" />

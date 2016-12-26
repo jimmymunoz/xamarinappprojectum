@@ -4,18 +4,18 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Xamarin.Forms;
-using static Android.Resource;
+//using static Android.Resource;
 
 namespace SeniorAssistance
 {
 	public partial class ContactsFromPage : ContentPage
 	{
-        ConctactDatabase database;
+        ContactDatabase database;
 
         public ContactsFromPage()
 		{
 			InitializeComponent();
-            database = new ConctactDatabase();
+            database = new ContactDatabase();
           
             BtnSave.Clicked += async (sender, e) =>
             {

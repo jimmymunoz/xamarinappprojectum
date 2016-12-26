@@ -17,7 +17,7 @@ namespace SeniorAssistance
 		public ContactPage()
 		{
 			InitializeComponent();
-			database = new ConctactDatabase();
+			database = new ContactDatabase();
 
 			Items1 = new ObservableCollection<ITable>();
 			ItemList.ItemsSource = Items1;

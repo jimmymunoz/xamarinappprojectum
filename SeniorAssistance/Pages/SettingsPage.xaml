@@ -21,15 +21,15 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <StackLayout Grid.Row="0" Grid.Column="0" Orientation="Vertical">
-                    <Image x:Name="btnMyInformation" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Source="web.png" Grid.Row="0" HeightRequest="80" WidthRequest="80" />
+                    <Image x:Name="btnMyInformation" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Source="information.png" Grid.Row="0" HeightRequest="80" WidthRequest="80" />
                     <Label Text="Mes Informations" FontAttributes="Bold" FontSize="15" HorizontalTextAlignment="Center" />
                 </StackLayout>
                 <StackLayout Grid.Row="0" Grid.Column="1" Orientation="Vertical">
-                    <Image x:Name="btnContacts" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Source="web.png" Grid.Row="0" HeightRequest="80" WidthRequest="80" />
+                    <Image x:Name="btnContacts" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Source="contactbook.png" Grid.Row="0" HeightRequest="80" WidthRequest="80" />
                     <Label Text="Contacts" FontAttributes="Bold" FontSize="15" HorizontalTextAlignment="Center" />
                 </StackLayout>
                 <StackLayout Grid.Row="0" Grid.Column="2" Orientation="Vertical">
-                    <Image x:Name="btnBank" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Source="web.png" Grid.Row="0" HeightRequest="80" WidthRequest="80" />
+                    <Image x:Name="btnBank" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Source="notes.png" Grid.Row="0" HeightRequest="80" WidthRequest="80" />
                     <Label Text="Banques" FontAttributes="Bold" FontSize="15" HorizontalTextAlignment="Center" />
                 </StackLayout>
             </Grid>

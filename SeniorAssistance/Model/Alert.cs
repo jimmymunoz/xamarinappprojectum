@@ -1,7 +1,4 @@
-﻿using Java.Sql;
-using SQLite;
-using System;
-using Xamarin.Forms;
+﻿using SQLite;
 
 namespace SeniorAssistance.Model
 {
@@ -12,7 +9,7 @@ namespace SeniorAssistance.Model
 
         public int Idmedicament { get; set; }
 
-        public TimeSpan Hour { get; set; }
+        public string Hour { get; set; }
 
         public override string ToString()
         {
