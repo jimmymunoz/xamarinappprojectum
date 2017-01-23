@@ -8,7 +8,7 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using SeniorAssistance.Database;
-using SimpleService;
+
 using Xamarin.Forms;
 
 using SeniorAssistance;
