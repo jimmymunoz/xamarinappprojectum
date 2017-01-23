@@ -12,14 +12,14 @@
                 <ColumnDefinition Width="100" />
             </Grid.ColumnDefinitions>
 
-            <Grid x:Name="innerGrid" Grid.Column="0" Padding="60" Margin="60,200,0,0" >
+            <Grid x:Name="innerGrid" Grid.Column="0" Padding="5" Margin="0,0,0,0" >
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="40" />
-                    <RowDefinition Height="40" />
-                    <RowDefinition Height="40" />
-                    <RowDefinition Height="40" />
-                    <RowDefinition Height="150" />
-                </Grid.RowDefinitions>
+                	<RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+                    <RowDefinition Height="80" />
+				</Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
