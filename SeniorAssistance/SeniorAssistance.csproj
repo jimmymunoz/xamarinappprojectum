@@ -81,6 +81,17 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\ContactsTypeContact.cs" />
+    <Compile Include="Pages\EditMyProfilForm.xaml.cs">
+      <DependentUpon>EditMyProfilForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ProfilPage.xaml.cs">
+      <DependentUpon>ProfilPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Service\CancelledMessage.cs" />
+    <Compile Include="Service\ServiceAlert.cs" />
+    <Compile Include="Service\StartLongRunningTaskMessage .cs" />
+    <Compile Include="StopLongRunningTaskMessage.cs" />
+    <Compile Include="Service\TickedMessage.cs" />
     <EmbeddedResource Include="Pages\BankPage.xaml.cs">
       <DependentUpon>BankPage.xaml</DependentUpon>
     </EmbeddedResource>
@@ -196,6 +207,18 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\BankPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\ProfilPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\EditMyProfilForm.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

@@ -5,7 +5,7 @@ using SQLite;
 
 namespace SeniorAssistance.Model
 {
-    class User : ITable
+    public class User : ITable
     {
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }

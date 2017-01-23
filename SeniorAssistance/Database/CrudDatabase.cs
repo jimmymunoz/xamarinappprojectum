@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using SeniorAssistance.Model;
+using System.Linq;
 
 namespace SeniorAssistance.Database
 {
@@ -40,8 +41,14 @@ namespace SeniorAssistance.Database
         }
         public IEnumerable<T> GetItems<T>() where T : ITable, new()
         {
-            return (from i in Connection.Table<T>()
-                    select i);
+           return (from i in Connection.Table<T>()
+                       select i);
+            
+        }
+        public int GetCount<T>() where T : ITable, new()
+        {
+            int count =  Connection.Table<T>().Count();
+            return count;
         }
         public int DeleteItem<T>(T item) where T : ITable
         {

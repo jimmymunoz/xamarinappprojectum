@@ -14,11 +14,13 @@ namespace SeniorAssistance
 
 		protected override void OnStart()
 		{
-			// Handle when your app starts
-		}
+            LoadAlertAlarm();
+            // Handle when your app starts
+        }
 
 		protected override void OnSleep()
 		{
+
 			// Handle when your app sleeps
 		}
 
@@ -26,5 +28,10 @@ namespace SeniorAssistance
 		{
 			// Handle when your app resumes
 		}
-	}
+        public void LoadAlertAlarm()
+        {
+
+        }
+
+    }
 }

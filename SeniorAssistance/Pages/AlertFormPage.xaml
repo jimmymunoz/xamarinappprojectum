@@ -21,8 +21,8 @@
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <Label Text="Date :" Grid.Column="0" />
-                    <TimePicker Time="{Binding Hour}"  Grid.Column="1" x:Name="Hour" />
+                    <TimePicker Time="{Binding Hour}" Grid.Column="0" x:Name="Hour" />
+                    <Picker x:Name="picker"  Grid.Column="1" Title="Days of Alarm"/>
                     <Button Grid.Column="2" x:Name="Save" Text="Save Item"/>
                 </Grid>
 
@@ -39,6 +39,7 @@
                                                 <ColumnDefinition Width="50" />
                                             </Grid.ColumnDefinitions>
                                             <Label Text="{Binding Hour}" Grid.Column="0" FontAttributes="Bold" FontSize="Medium"/>
+                                            
                                             <Image  x:Name="btnAlertDelete" Grid.Column="1"  VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Source="rubbishbin.png" HeightRequest="40" WidthRequest="40" >
                                                 <Image.GestureRecognizers>
                                                     <TapGestureRecognizer
@@ -53,6 +54,7 @@
                         </ListView>
                     </ScrollView>
                 </StackLayout>
+     
             </Grid>
             <common:NavigationToolbar Grid.Column="1">
             </common:NavigationToolbar>

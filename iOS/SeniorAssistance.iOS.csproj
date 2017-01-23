@@ -132,7 +132,7 @@
     </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\" />
+    <BundleResource Include="Resources\creditagricole.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -170,6 +170,24 @@
     <BundleResource Include="Resources\rubbishbin.png" />
     <BundleResource Include="Resources\save.png" />
     <BundleResource Include="Resources\save2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\BNP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\CIC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\laposte.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\societegenrale.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\edit.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.1.114\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.1.114\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />

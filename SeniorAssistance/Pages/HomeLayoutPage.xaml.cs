@@ -36,7 +36,7 @@ namespace SeniorAssistance
 
 		void clickImageInternet(object sender, EventArgs e)
 		{
-			Navigation.PushAsync(new WebViewInternet("https://www.google.fr/"));
+			Navigation.PushAsync(new WebViewInternet("https://www.google.fr/","Internet"));
 		}
 
 		void clickImageHospital(object sender, EventArgs e)
@@ -51,7 +51,7 @@ namespace SeniorAssistance
 
 		void clickImageGames(object sender, EventArgs e)
 		{
-			Navigation.PushAsync(new GamesPage());
+			Navigation.PushAsync(new WebViewInternet("http://fr.ibraining.com/memorize/","Jeux de mémorisation"));
 		}
 
 

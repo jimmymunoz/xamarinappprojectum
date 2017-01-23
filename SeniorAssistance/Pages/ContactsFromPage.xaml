@@ -4,6 +4,7 @@
     xmlns:common="clr-namespace:SeniorAssistance;assembly=SeniorAssistance"
     x:Class="SeniorAssistance.ContactsFromPage"
     Title="Ajouter/Modifier Contact">
+ 
     <ContentPage.Content>
         <Grid x:Name="outerGrid">
             <Grid.ColumnDefinitions>
