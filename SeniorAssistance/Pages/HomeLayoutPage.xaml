@@ -3,7 +3,10 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 	xmlns:common="clr-namespace:SeniorAssistance;assembly=SeniorAssistance"
     x:Class="SeniorAssistance.HomeLayoutPage"
-    Title="Home">
+    Title="Home"
+    BackgroundColor="#ECEFF1"
+                 
+  >
     <ContentPage.Content>
         <Grid x:Name="outerGrid">
             <Grid.ColumnDefinitions>
@@ -38,6 +41,7 @@
                     <Image x:Name="btnGames" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Source="humanbrain.png" Grid.Row="0" HeightRequest="80" WidthRequest="80" />
                     <Label Text="Jeux" FontAttributes="Bold" FontSize="15" HorizontalTextAlignment="Center" />
                 </StackLayout>
+                
             </Grid>
             <common:NavigationToolbar Grid.Column="1">
             </common:NavigationToolbar>

@@ -7,12 +7,12 @@ namespace SeniorAssistance
 {
     class WebViewInternet : ContentPage
     {
-        public WebViewInternet(string UrlView)
+        public WebViewInternet(string UrlView , string title)
         {
             
                 Label header = new Label
-                {
-                    Text = "Internet",
+                { 
+                    Text = title,
                     FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)),
                     HorizontalOptions = LayoutOptions.Center
                 };

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:common="clr-namespace:SeniorAssistance;assembly=SeniorAssistance"
+    x:Class="SeniorAssistance.ProfilPage"
+	Title="ProfilPage">
+    <ContentPage.Content>
+        <Grid x:Name="outerGrid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="100" />
+            </Grid.ColumnDefinitions>
+            
+            <Grid x:Name="innerGrid" Grid.Column="0" Padding="60" Margin="60,200,0,0" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="150" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                
+                    <Label Text="First Name:" Grid.Row="0" Grid.Column="0"  />
+                
+                <Label x:Name="Firstname" FontAttributes="Bold" FontSize="Medium"  Grid.Row="0" Grid.Column="1" />
+
+                <Label Text="Last Name:" Grid.Row="1" Grid.Column="0"/>
+                <Label Text="Phone" Grid.Row="2" Grid.Column="0" />
+                <Label Text="Adresse" Grid.Row="3" Grid.Column="0" />
+                <Label x:Name="Lastname"  Grid.Row="1" Grid.Column="1" FontAttributes="Bold" FontSize="Medium" />
+                <Label x:Name="Phone"  Grid.Row="2" Grid.Column="1"  FontAttributes="Bold" FontSize="Medium"/>
+                <Label x:Name="Adresse"  Grid.Row="3" Grid.Column="1"  FontAttributes="Bold" FontSize="Medium"/>
+                <Image  x:Name="imageEditProfil" Grid.ColumnSpan="2" Grid.Row="4" Grid.Column="0" Source="edit.jpg" />
+            
+            </Grid>
+
+            <common:NavigationToolbar Grid.Column="1">
+            </common:NavigationToolbar>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -43,34 +43,34 @@ namespace SeniorAssistance
 
         void clickImageBnp(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new WebViewInternet("https://group.bnpparibas/"));
+            Navigation.PushAsync(new WebViewInternet("https://group.bnpparibas/","Acceder a mon Compte"));
         }
 
         void clickImageCreditagricole(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new WebViewInternet("https://www.credit-agricole.com/"));
+            Navigation.PushAsync(new WebViewInternet("https://www.credit-agricole.com/", "Acceder a mon Compte"));
         }
 
         void clickImageSocietegenrale(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new WebViewInternet("https://www.societegenerale.com/fr/accueil"));
+            Navigation.PushAsync(new WebViewInternet("https://www.societegenerale.com/fr/accueil", "Acceder a mon Compte"));
         }
 
         void clickImagbtnBPCE(object sender, EventArgs e)
         {
             
-            Navigation.PushAsync(new WebViewInternet("http://www.groupebpce.fr/"));
+            Navigation.PushAsync(new WebViewInternet("http://www.groupebpce.fr/", "Acceder a mon Compte"));
         }
 
 
         void clickImageCréditmutuelCIC(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new WebViewInternet("https://www.creditmutuel.fr/groupe/fr/index.html"));
+            Navigation.PushAsync(new WebViewInternet("https://www.creditmutuel.fr/groupe/fr/index.html", "Acceder a mon Compte"));
         }
 
         void clickImagetnLaPoste(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new WebViewInternet("http://www.laposte.fr/particulier"));
+            Navigation.PushAsync(new WebViewInternet("http://www.laposte.fr/particulier", "Acceder a mon Compte"));
         }
 
     }

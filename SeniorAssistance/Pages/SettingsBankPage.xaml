@@ -22,30 +22,30 @@
                 </Grid.ColumnDefinitions>
                 <StackLayout Grid.Row="0" Grid.Column="0" Orientation="Vertical">
 
-                    <Image x:Name="btnBNPParibas" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Source="internet.png" Grid.Row="0" HeightRequest="80" WidthRequest="80" />
+                    <Image x:Name="btnBNPParibas" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Source="bnp.png" Grid.Row="0" HeightRequest="80" WidthRequest="80" />
                     <Label Text="BNP Paribas" FontAttributes="Bold" FontSize="15" HorizontalTextAlignment="Center" />
                 </StackLayout>
                 <StackLayout Grid.Row="0" Grid.Column="1" Orientation="Vertical">
-                    <Image x:Name="btnCréditagricole" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Source="medicament.png" Grid.Row="0" HeightRequest="80" WidthRequest="80" />
+                    <Image x:Name="btnCréditagricole" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Source="creditagricole.png" Grid.Row="0" HeightRequest="80" WidthRequest="80" />
                     <Label Text="Crédit agricole " FontAttributes="Bold" FontSize="15" HorizontalTextAlignment="Center" />
                 </StackLayout>
                 <StackLayout Grid.Row="0" Grid.Column="2" Orientation="Vertical">
-                    <Image x:Name="btnSociétégénérale" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Source="hospital.png" Grid.Row="0" HeightRequest="80" WidthRequest="80" />
+                    <Image x:Name="btnSociétégénérale" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Source="societegenrale.png" Grid.Row="0" HeightRequest="80" WidthRequest="80" />
                     <Label Text="Société générale" FontAttributes="Bold" FontSize="15" HorizontalTextAlignment="Center" />
                 </StackLayout>
 
                 <StackLayout Grid.Row="1" Grid.Column="0" Orientation="Vertical">
-                    <Image x:Name="btnBPCE" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Source="humanbrain.png" Grid.Row="0" HeightRequest="80" WidthRequest="80" />
+                    <Image x:Name="btnBPCE" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Source="bcpe.png" Grid.Row="0" HeightRequest="80" WidthRequest="80" />
                     <Label Text="BPCE" FontAttributes="Bold" FontSize="15" HorizontalTextAlignment="Center" />
                 </StackLayout>
 
                 <StackLayout Grid.Row="1" Grid.Column="1" Orientation="Vertical">
-                    <Image x:Name="btnCréditmutuelCIC " VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Source="humanbrain.png" Grid.Row="0" HeightRequest="80" WidthRequest="80" />
+                    <Image x:Name="btnCréditmutuelCIC " VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Source="cic.png" Grid.Row="0" HeightRequest="80" WidthRequest="80" />
                     <Label Text="Crédit mutuel-CIC " FontAttributes="Bold" FontSize="15" HorizontalTextAlignment="Center" />
                 </StackLayout>
 
                 <StackLayout Grid.Row="1" Grid.Column="2" Orientation="Vertical">
-                    <Image x:Name="btnLaPoste " VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Source="humanbrain.png" Grid.Row="0" HeightRequest="80" WidthRequest="80" />
+                    <Image x:Name="btnLaPoste " VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Source="laposte.png" Grid.Row="0" HeightRequest="80" WidthRequest="80" />
                     <Label Text="La Poste " FontAttributes="Bold" FontSize="15" HorizontalTextAlignment="Center" />
                 </StackLayout>
 
