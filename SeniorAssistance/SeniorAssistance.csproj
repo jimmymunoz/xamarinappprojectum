@@ -155,6 +155,10 @@
     <Compile Include="Model\MedicamentHistory.cs" />
     <Compile Include="Model\NotificationSms.cs" />
     <Compile Include="Model\User.cs" />
+    <Compile Include="Service\CurrentAlertsMedicament.cs" />
+    <Compile Include="Service\StartRunMedicamentAlertTaskMessage.cs" />
+    <Compile Include="Service\TickedMessage.cs" />
+    <Compile Include="Timer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Mono.Android">

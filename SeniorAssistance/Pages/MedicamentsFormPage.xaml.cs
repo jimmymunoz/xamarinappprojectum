@@ -33,7 +33,7 @@ namespace SeniorAssistance
                     StartDate = StartDate.Date,
                     Enabled = Int32.Parse(Enabled.Text),
 
-            };
+            	};
                 if (!string.IsNullOrWhiteSpace(ID.Text))
                     medicament.ID = Int32.Parse(ID.Text);
 
@@ -47,8 +47,6 @@ namespace SeniorAssistance
                     //secondPage.BindingContext = medicament;
                     await Navigation.PushAsync(new AlertFormPage(medicament));
 
-
-                  
                 }
                 else
                 await Navigation.PushAsync(new MedicamentsPage());
@@ -66,7 +64,7 @@ namespace SeniorAssistance
                    Contact contactToDelete= database.GetItem<Contact>(Int32.Parse(ID.Text));
                    database.DeleteItem(item);*/
 
-                var answer = await DisplayAlert("Exit", "Do you wan't to delet ", "Yes", "No");
+                var answer = await DisplayAlert("Exit", "Do you want to delete", "Yes", "No");
                 if (answer)
                 {
                     Medicament item = new Medicament

@@ -90,10 +90,9 @@ namespace SeniorAssistance
                 };
                 database.SaveItem(item);
                 RefreshList(medicament);
+				CurrentAlertsMedicament.getInstance().updateListAlert();
             };
             RefreshList(medicament);
-
-
 
         }
 

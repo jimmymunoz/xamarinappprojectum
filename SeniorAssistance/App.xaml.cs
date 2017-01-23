@@ -1,22 +1,54 @@
-﻿using Xamarin.Forms;
+﻿using System;
+using SeniorAssistance.Database;
+using Xamarin.Forms;
 
 namespace SeniorAssistance
 {
 	public partial class App : Application
 	{
+		
 		public App()
 		{
 			InitializeComponent();
 
 			//MainPage = new SeniorAssistancePage();
 			MainPage = new NavigationPage(new HomeLayoutPage());
+			//Start Services
+			var message = new StartRunMedicamentAlertTaskMessage();
+			MessagingCenter.Send(message, "StartRunMedicamentAlertTaskMessage");
+			//TimerCallback timerDelegate = new TimerCallback(callback);
+			/*
+			var timer = new System.Threading.Timer(
+				(e) => CurrentAlertsMedicament.validateAndNotifyAlertsByTimeSpam(DateTime.Now),
+				null,
+				1000, 1000);
+			*/
+			/*
+			while (timer != null) {
+				MainPage.Title = "New " + DateTime.Now;
+			}
+			*/
+
+			HandleReceivedMessages();
 		}
+
+		public static void callback(){
+			
+		}
+
 
 		protected override void OnStart()
 		{
-            LoadAlertAlarm();
-            // Handle when your app starts
-        }
+			LoadAlertAlarm();
+			CurrentAlertsMedicament.getInstance().updateListAlert();
+			var now = DateTime.Now;
+			CurrentAlertsMedicament.getInstance().validateAlertByTimeSpam(now);
+			//var answer = MainPage.DisplayAlert("Exit", "Now : " + now.Hour + " " + " " + now.Minute + " " + CurrentAlertsMedicament.getInstance().getValidatedAlerts(), "Yes", "No");
+
+			//var answer = MainPage.DisplayAlert("Exit", CurrentAlertsMedicament.getInstance().getActiveAlerts(), "Yes", "No");
+			// Handle when your app starts
+		}
+
 
 		protected override void OnSleep()
 		{
@@ -32,6 +64,18 @@ namespace SeniorAssistance
         {
 
         }
+
+		void HandleReceivedMessages()
+		{
+			//Impresion des notifications
+			MessagingCenter.Subscribe<TickedMessage>(this, "TickedMessage", message =>
+			{
+				Device.BeginInvokeOnMainThread(() =>
+				{
+					MainPage.DisplayAlert("Exit",message.Message, "Yes", "No");
+				});
+			});
+		}
 
     }
 }
