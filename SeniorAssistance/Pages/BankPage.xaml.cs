@@ -35,7 +35,7 @@ namespace SeniorAssistance
 
         void clickImageInternet(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new WebViewInternet("https://www.google.fr/"));
+            Navigation.PushAsync(new WebViewInternet("https://www.google.fr/", ""));
         }
 
         void clickImageHospital(object sender, EventArgs e)
