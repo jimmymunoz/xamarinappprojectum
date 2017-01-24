@@ -15,7 +15,7 @@ namespace SeniorAssistance
 			MainPage = new NavigationPage(new HomeLayoutPage());
 			//Start Services
 			var message = new StartRunMedicamentAlertTaskMessage();
-			MessagingCenter.Send(message, "StartRunMedicamentAlertTaskMessage");
+			//MessagingCenter.Send(message, "StartRunMedicamentAlertTaskMessage");
 
 			HandleReceivedMessages();
 		}

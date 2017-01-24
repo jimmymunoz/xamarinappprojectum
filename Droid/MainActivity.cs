@@ -20,17 +20,18 @@ namespace SeniorAssistance.Droid
        
         protected override void OnCreate(Bundle bundle)
         {
-            Console.WriteLine("OnCreate Main Android!");
+            Xamarin.FormsMaps.Init(this, bundle);
+
+			Console.WriteLine("OnCreate Main Android!");
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
-
-            base.OnCreate(bundle);
+			base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
             ContactDatabase.Root = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
           	
 			var intent = new Intent(this, typeof(StartRunMedicamentAlertTaskService));
-			StartService(intent);
+			//StartService(intent);
 			/*
 			MessagingCenter.Subscribe<StartRunMedicamentAlertTaskMessage>(this, "StartRunMedicamentAlert", message =>
 			{

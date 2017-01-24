@@ -11,13 +11,9 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="100" />
             </Grid.ColumnDefinitions>
-			 <StackLayout VerticalOptions="StartAndExpand" Padding="30">
-		        <maps:Map WidthRequest="320" HeightRequest="200"
-		            x:Name="MyMap"
-		            IsShowingUser="true"
-		            MapType="Hybrid"
-		        />
-		    </StackLayout>
+			 <StackLayout x:Name="stackHospitals" Grid.Column="0" Padding="10">
+				<Label Text="Content Hospitals" />
+			</StackLayout>
             <common:NavigationToolbar Grid.Column="1">
             </common:NavigationToolbar>
         </Grid>
