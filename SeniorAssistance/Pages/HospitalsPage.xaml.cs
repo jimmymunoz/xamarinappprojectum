@@ -11,6 +11,7 @@ namespace SeniorAssistance
 {
 	public partial class HospitalsPage : ContentPage
 	{
+		//public List<CustomPin> CustomPins { get; set; }
 		Map map;
 
 		public HospitalsPage()
