@@ -92,7 +92,7 @@ namespace SeniorAssistance
                 RefreshList(medicament);
             };
             RefreshList(medicament);
-
+          //  RefreshListalert();
 
 
         }
@@ -127,5 +127,18 @@ namespace SeniorAssistance
             foreach (var item in items)
                 ListAlerts.Add(item);
         }
+        private void RefreshListalert()
+        {
+            ListAlerts.Clear();
+        int id = medicament.ID;
+
+        var items = (from i in database.GetItems<Alert>()
+                     where i.Idmedicament == id
+                     select i);
+
+        foreach (var item in items)
+            ListAlerts.Add(item);
     }
+}
+ 
 }
