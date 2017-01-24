@@ -8,6 +8,10 @@ using System.Threading.Tasks;
 using System.Threading;
 using Xamarin.Forms;
 using System.Diagnostics.Contracts;
+//using Newtonsoft.Json;
+using System.Diagnostics;
+using System.Text;
+
 
 namespace SeniorAssistance
 {
@@ -133,5 +137,25 @@ namespace SeniorAssistance
 			}
 			return result;
 		}
+
+		public async Task SaveTodoItemAsync(TodoItem item, bool isNewItem = false)
+		{
+			/*
+			// RestUrl = http://developer.xamarin.com:8081/api/todoitems{0}
+			var uri = new Uri(string.Format(Constants.RestUrl, item.ID));
+			var json = JsonConvert.SerializeObject(item);
+			var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+			HttpResponseMessage response = null;
+			if (isNewItem)
+			{
+				response = await client.PostAsync(uri, content);
+			}
+			if (response.IsSuccessStatusCode)
+				{
+					Debug.WriteLine("TodoItem successfully saved.");
+				}
+		   }
+			*/
 	}
 }
