@@ -16,18 +16,6 @@ namespace SeniorAssistance
 			//Start Services
 			var message = new StartRunMedicamentAlertTaskMessage();
 			MessagingCenter.Send(message, "StartRunMedicamentAlertTaskMessage");
-			//TimerCallback timerDelegate = new TimerCallback(callback);
-			/*
-			var timer = new System.Threading.Timer(
-				(e) => CurrentAlertsMedicament.validateAndNotifyAlertsByTimeSpam(DateTime.Now),
-				null,
-				1000, 1000);
-			*/
-			/*
-			while (timer != null) {
-				MainPage.Title = "New " + DateTime.Now;
-			}
-			*/
 
 			HandleReceivedMessages();
 		}

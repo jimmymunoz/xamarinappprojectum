@@ -4,5 +4,8 @@
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 	<uses-permission android:name="android.permission.CALL_PHONE" />
 	<uses-permission android:name="android.permission.INTERNET" />
-	<application android:label="Senior Assistance" android:icon="@drawable/icon"></application>
+	<application android:label="Senior Assistance" android:icon="@drawable/icon">
+		<meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyD2oPrXczHF5ky1-aneVM_pBy5jUMYStDQ" />
+		<meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+	</application>
 </manifest>

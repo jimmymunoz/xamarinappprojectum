@@ -10,6 +10,12 @@ namespace SeniorAssistance
 		public HospitalsPage()
 		{
 			InitializeComponent();
+			/*
+			MyMap.MoveToRegion(
+			MapSpan.FromCenterAndRadius(
+				new Position(37, -122), Distance.FromMiles(1)));
+			*/
+				
 		}
 	}
 }
