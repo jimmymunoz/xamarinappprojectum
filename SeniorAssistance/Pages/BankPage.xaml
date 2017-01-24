@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:common="clr-namespace:SeniorAssistance;assembly=SeniorAssistance"
+    x:Class="SeniorAssistance.BankPage"
+    Title="Bank">
+    <ContentPage.Content>
+        <Grid x:Name="outerGrid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="100" />
+            </Grid.ColumnDefinitions>
+            <Grid x:Name="innerGrid" Grid.Column="0" Padding="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <StackLayout Grid.Row="0" Grid.Column="0" Orientation="Vertical">
+
+                    <Image x:Name="btnBNPParibas" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Source="internet.png" Grid.Row="0" HeightRequest="80" WidthRequest="80" />
+                    <Label Text="BNP Paribas" FontAttributes="Bold" FontSize="15" HorizontalTextAlignment="Center" />
+                </StackLayout>
+                <StackLayout Grid.Row="0" Grid.Column="1" Orientation="Vertical">
+                    <Image x:Name="btnCréditagricole" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Source="medicament.png" Grid.Row="0" HeightRequest="80" WidthRequest="80" />
+                    <Label Text="Crédit agricole " FontAttributes="Bold" FontSize="15" HorizontalTextAlignment="Center" />
+                </StackLayout>
+                <StackLayout Grid.Row="0" Grid.Column="2" Orientation="Vertical">
+                    <Image x:Name="btnSociétégénérale" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Source="hospital.png" Grid.Row="0" HeightRequest="80" WidthRequest="80" />
+                    <Label Text="Société générale" FontAttributes="Bold" FontSize="15" HorizontalTextAlignment="Center" />
+                </StackLayout>
+
+                <StackLayout Grid.Row="1" Grid.Column="0" Orientation="Vertical">
+                    <Image x:Name="btnBPCE" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Source="humanbrain.png" Grid.Row="0" HeightRequest="80" WidthRequest="80" />
+                    <Label Text="BPCE" FontAttributes="Bold" FontSize="15" HorizontalTextAlignment="Center" />
+                </StackLayout>
+
+                <StackLayout Grid.Row="1" Grid.Column="1" Orientation="Vertical">
+                    <Image x:Name="btnCréditmutuelCIC " VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Source="humanbrain.png" Grid.Row="0" HeightRequest="80" WidthRequest="80" />
+                    <Label Text="Crédit mutuel-CIC " FontAttributes="Bold" FontSize="15" HorizontalTextAlignment="Center" />
+                </StackLayout>
+
+                <StackLayout Grid.Row="1" Grid.Column="2" Orientation="Vertical">
+                    <Image x:Name="btnLaPoste " VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Source="humanbrain.png" Grid.Row="0" HeightRequest="80" WidthRequest="80" />
+                    <Label Text="La Poste " FontAttributes="Bold" FontSize="15" HorizontalTextAlignment="Center" />
+                </StackLayout>
+
+            </Grid>
+            <common:NavigationToolbar Grid.Column="1">
+            </common:NavigationToolbar>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -4,39 +4,50 @@
     xmlns:common="clr-namespace:SeniorAssistance;assembly=SeniorAssistance"
     x:Class="SeniorAssistance.ContactsFromPage"
     Title="Ajouter/Modifier Contact">
+ 
     <ContentPage.Content>
         <Grid x:Name="outerGrid">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="100" />
             </Grid.ColumnDefinitions>
+            
             <Grid x:Name="innerGrid" Grid.Column="0"  Padding="10">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
 					<RowDefinition Height="Auto" />
+                    
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Label Text="Name:" Grid.Row="0" Grid.Column="0" />
-                <Label Text="Date:" Grid.Row="1" Grid.Column="0" />
-                <Label Text="Tags:" Grid.Row="2" Grid.Column="0" />
-                <Entry Grid.Row="0" Grid.Column="1" />
-                <Entry Grid.Row="1" Grid.Column="1" />
-                <Entry Grid.Row="2" Grid.Column="1" />
-				
-				<Grid x:Name="buttonsGrid"  Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="#CCCCCC">
+                <Label Text="First Name:" Grid.Row="0" Grid.Column="0"  />
+                <Label Text="Last Name:" Grid.Row="1" Grid.Column="0" />
+                <Label Text="Phone" Grid.Row="2" Grid.Column="0" />
+				<Entry Text="{Binding ID}" x:Name="ID" IsVisible="false"/>
+                <Entry Text="{Binding Firstname}" Grid.Row="0" Grid.Column="1" x:Name="Firstname" />
+                <Entry Text="{Binding Lastname}" Grid.Row="1" Grid.Column="1" x:Name="Lastname"/>
+                <Entry Text="{Binding Phone}" Grid.Row="2" Grid.Column="1" x:Name="Phone" Keyboard="Telephone"/>
+                <Entry Text="{Binding Urgence}" Grid.Row="2" Grid.Column="1" x:Name="Phone" Keyboard="Telephone"/>
+                <Grid x:Name="buttonsGrid"  Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="#CCCCCC">
 	                <Grid.ColumnDefinitions>
 	                    <ColumnDefinition Width="*" />
 	                    <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
 	                </Grid.ColumnDefinitions>
-	                <Button Text="Annuler" Grid.Column="0" />
-	                <Button Text="Enregistrer" Grid.Column="1" />
+                    <Button x:Name="BtnCancel" Text="Cancel" Grid.Column="0" Style="{StaticResource buttonStyle}" />
+                    <Button x:Name="BtnSave" Text="Save" Grid.Column="1" Style="{StaticResource buttonStyle}" />
+                    <Button x:Name="BtnDelete" Text="Delete" Grid.Column="2" Style="{StaticResource buttonStyle}"/>
+                   
 	            </Grid>
             </Grid>
+
+            
+
+
             <common:NavigationToolbar Grid.Column="1">
             </common:NavigationToolbar>
         </Grid>

@@ -3,7 +3,10 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 	xmlns:common="clr-namespace:SeniorAssistance;assembly=SeniorAssistance"
     x:Class="SeniorAssistance.HomeLayoutPage"
-    Title="Home">
+    Title="Home"
+    BackgroundColor="#ECEFF1"
+                 
+  >
     <ContentPage.Content>
         <Grid x:Name="outerGrid">
             <Grid.ColumnDefinitions>
@@ -21,22 +24,27 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <StackLayout Grid.Row="0" Grid.Column="0" Orientation="Vertical">
-                    <Image x:Name="btnInternet" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Source="web.png" Grid.Row="0" HeightRequest="80" WidthRequest="80" />
+                    
+                    <Image x:Name="btnInternet" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Source="internet.png" Grid.Row="0" HeightRequest="80" WidthRequest="80" />
                     <Label Text="Internet" FontAttributes="Bold" FontSize="15" HorizontalTextAlignment="Center" />
                 </StackLayout>
                 <StackLayout Grid.Row="0" Grid.Column="1" Orientation="Vertical">
-                    <Image x:Name="btnMedicaments" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Source="web.png" Grid.Row="0" HeightRequest="80" WidthRequest="80" />
+                    <Image x:Name="btnMedicaments" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Source="medicament.png" Grid.Row="0" HeightRequest="80" WidthRequest="80" />
                     <Label Text="Medicaments" FontAttributes="Bold" FontSize="15" HorizontalTextAlignment="Center" />
                 </StackLayout>
                 <StackLayout Grid.Row="0" Grid.Column="2" Orientation="Vertical">
-                    <Image x:Name="btnHospital" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Source="web.png" Grid.Row="0" HeightRequest="80" WidthRequest="80" />
+                    <Image x:Name="btnHospital" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Source="hospital.png" Grid.Row="0" HeightRequest="80" WidthRequest="80" />
                     <Label Text="Hôpitals" FontAttributes="Bold" FontSize="15" HorizontalTextAlignment="Center" />
                 </StackLayout>
 
                 <StackLayout Grid.Row="1" Grid.Column="0" Orientation="Vertical">
-                    <Image x:Name="btnGames" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Source="web.png" Grid.Row="0" HeightRequest="80" WidthRequest="80" />
+                    <Image x:Name="btnGames" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Source="humanbrain.png" Grid.Row="0" HeightRequest="80" WidthRequest="80" />
                     <Label Text="Jeux" FontAttributes="Bold" FontSize="15" HorizontalTextAlignment="Center" />
                 </StackLayout>
+				<StackLayout Grid.Row="1" Grid.Column="2" Orientation="Vertical">
+                    <Button x:Name="SendMessage" Text="Notification" Style="{StaticResource buttonStyle}"/>
+                </StackLayout>
+                
             </Grid>
             <common:NavigationToolbar Grid.Column="1">
             </common:NavigationToolbar>

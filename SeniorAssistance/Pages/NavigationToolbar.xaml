@@ -3,17 +3,17 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     x:Class="SeniorAssistance.NavigationToolbar" 
     Orientation="Vertical"
-    BackgroundColor="#2C3E50"
+    BackgroundColor="#14103B"
     >
-    <StackLayout Orientation="Vertical">
-        <Image x:Name="btnHome" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Source="web.png" Grid.Row="0" HeightRequest="65" WidthRequest="65" />
-        <Label Text="Accueil" FontAttributes="Bold" FontSize="12" HorizontalTextAlignment="Center" TextColor="White"/>
+    <StackLayout Orientation="Vertical"  Padding="0,0,0,0" >
+        <Image x:Name="btnHome" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Source="home.png" Grid.Row="0" HeightRequest="65" WidthRequest="65" />
+        <Label Text="Accueil" FontAttributes="Bold" FontSize="12" HorizontalTextAlignment="Center" TextColor="White"  />
     </StackLayout>
-    <StackLayout Orientation="Vertical">
+    <StackLayout Orientation="Vertical" Padding="0,0,0,0">
         <Image x:Name="btnSettings" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Source="cogwheel.png" Grid.Row="0" HeightRequest="65" WidthRequest="65" />
         <Label Text="Settings" FontAttributes="Bold" FontSize="12" HorizontalTextAlignment="Center" TextColor="White" />
     </StackLayout>
-    <StackLayout Orientation="Vertical">
+    <StackLayout Orientation="Vertical"  Padding="0,0,0,0" >
         <Image x:Name="btnCall" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Source="telephone.png" Grid.Row="0" HeightRequest="65" WidthRequest="65" />
         <Label Text="Appeler" FontAttributes="Bold" FontSize="12" HorizontalTextAlignment="Center" TextColor="White" />
     </StackLayout>
