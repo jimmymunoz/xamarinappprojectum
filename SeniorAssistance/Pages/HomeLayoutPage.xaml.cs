@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 
 using Xamarin.Forms;
+using Plugin.Messaging;
 
 namespace SeniorAssistance
 {
@@ -31,6 +32,13 @@ namespace SeniorAssistance
 			tapImageGames.Tapped += clickImageGames;
 			btnGames.GestureRecognizers.Add(tapImageGames);
 
+			SendMessage.Clicked += (sender, e) =>
+			{
+				var smsMessenger = MessagingPlugin.SmsMessenger;
+				if (smsMessenger.CanSendSms)
+					smsMessenger.SendSms("+33698599684", "Hello from your friends at Xamarin!");
+			};
+
 
 		}
 
@@ -53,7 +61,6 @@ namespace SeniorAssistance
 		{
 			Navigation.PushAsync(new WebViewInternet("http://fr.ibraining.com/memorize/","Jeux de mémorisation"));
 		}
-
 
 
 

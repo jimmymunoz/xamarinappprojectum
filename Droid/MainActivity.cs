@@ -30,7 +30,7 @@ namespace SeniorAssistance.Droid
             global::Xamarin.Forms.Forms.Init(this, bundle);
             ContactDatabase.Root = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
           	
-			var intent = new Intent(this, typeof(StartRunMedicamentAlertTaskService));
+			//var intent = new Intent(this, typeof(StartRunMedicamentAlertTaskService));
 			//StartService(intent);
 			/*
 			MessagingCenter.Subscribe<StartRunMedicamentAlertTaskMessage>(this, "StartRunMedicamentAlert", message =>
@@ -43,8 +43,30 @@ namespace SeniorAssistance.Droid
 
 
             LoadApplication(new App());
+			Notification();
         }
         
+		public void Notification()
+		{
+			Notification.Builder builder = new Notification.Builder(this)
+			.SetContentTitle("C'est un test de notification ")
+			.SetContentText("Teste notification coté android!")
+			.SetDefaults(NotificationDefaults.Sound)
+			.SetSmallIcon(Resource.Drawable.alarm);
+
+			// Build the notification:
+			Notification notification = builder.Build();
+
+			// Get the notification manager:
+			NotificationManager notificationManager =
+				GetSystemService(Context.NotificationService) as NotificationManager;
+
+			// Publish the notification:
+			const int notificationId = 0;
+			notificationManager.Notify(notificationId, notification);
+			TabLayoutResource = Resource.Layout.Tabbar;
+			ToolbarResource = Resource.Layout.Toolbar;
+		}
         
 
     }

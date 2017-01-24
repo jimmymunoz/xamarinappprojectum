@@ -11,8 +11,8 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="100" />
             </Grid.ColumnDefinitions>
-			 <StackLayout x:Name="stackHospitals" Grid.Column="0" Padding="10">
-				<Label Text="Content Hospitals" />
+			<StackLayout x:Name="stackHospitals" Grid.Column="0" Padding="0">
+			
 			</StackLayout>
             <common:NavigationToolbar Grid.Column="1">
             </common:NavigationToolbar>
