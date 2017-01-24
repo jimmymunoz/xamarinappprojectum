@@ -15,35 +15,36 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
-					<RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                
+
                 <Label Text="Name:" Grid.Row="0" Grid.Column="0" />
-				<Label Text="StartDate:" Grid.Row="1" Grid.Column="0" />
+                <Label Text="StartDate:" Grid.Row="1" Grid.Column="0" />
+
                 <Label Text="Enabled:" Grid.Row="2" Grid.Column="0" />
                 <Entry Text="{Binding ID}" x:Name="ID" IsVisible="false"/>
                 <Entry Text="{Binding Name}" Grid.Row="0" Grid.Column="1" x:Name="Name" />
                 <DatePicker x:Name="StartDate" Grid.Row="1" Grid.Column="1" VerticalOptions="CenterAndExpand" >
                     <DatePicker.Format>yyyy-MM-dd</DatePicker.Format>
 
-                    
+
                 </DatePicker>
-                <Entry x:Name="Enabled" Grid.Row="2" Grid.Column="1" />
+                <Switch IsToggled="{Binding Enabled}" HorizontalOptions="EndAndExpand" Grid.Row="2" Grid.Column="1" x:Name="Enabled"/>
                 <Grid x:Name="buttonsGrid"  Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="#CCCCCC">
-	                <Grid.ColumnDefinitions>
-	                    <ColumnDefinition Width="*" />
-	                    <ColumnDefinition Width="*" />
+                    <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
-	                </Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
                     <Button  x:Name="BtnCancel" Text="Cancel" Grid.Column="0" />
                     <Button x:Name="BtnSave" Text="Save" Grid.Column="1" />
                     <Button x:Name="BtnDelete" Text="Delete" Grid.Column="2" />
-	            </Grid>
-                
+                </Grid>
+
             </Grid>
             <common:NavigationToolbar Grid.Column="1">
             </common:NavigationToolbar>

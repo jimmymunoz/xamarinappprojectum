@@ -48,8 +48,30 @@ namespace SeniorAssistance.Droid
         
 		public void Notification()
 		{
-			Notification.Builder builder = new Notification.Builder(this)
-			.SetContentTitle("C'est un test de notification ")
+            // Setup an intent for SecondActivity:
+            Intent secondIntent = new Intent(this, typeof(MainActivity));
+
+            // Pass some information to SecondActivity:
+            secondIntent.PutExtra("message", "Greetings from MainActivity!");
+
+            // Create a task stack builder to manage the back stack:
+            TaskStackBuilder stackBuilder = TaskStackBuilder.Create(this);
+
+            // Add all parents of SecondActivity to the stack: 
+            stackBuilder.AddParentStack(Java.Lang.Class.FromType(typeof(MainActivity)));
+
+            // Push the intent that starts SecondActivity onto the stack:
+            stackBuilder.AddNextIntent(secondIntent);
+
+            // Obtain the PendingIntent for launching the task constructed by
+            // stackbuilder. The pending intent can be used only once (one shot):
+            const int pendingIntentId = 0;
+            PendingIntent pendingIntent =
+                stackBuilder.GetPendingIntent(pendingIntentId, PendingIntentFlags.OneShot);
+
+            Notification.Builder builder = new Notification.Builder(this)
+            .SetContentIntent(pendingIntent)
+            .SetContentTitle("C'est un test de notification ")
 			.SetContentText("Teste notification coté android!")
 			.SetDefaults(NotificationDefaults.Sound)
 			.SetSmallIcon(Resource.Drawable.alarm);

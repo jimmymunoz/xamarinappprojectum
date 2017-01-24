@@ -20,7 +20,7 @@ namespace SeniorAssistance.Model
 
         public override string ToString()
         {
-            return string.Format("[Contact: ID={0}, firstName={1}, lastName={2},TypeContact {3},phone={4}]", ID, Firstname, Lastname, TypeContact, Phone);
+            return string.Format("[Contact: ID={0}, firstName={1}, lastName={2},TypeContact {3},phone={4},Urgence={5}]", ID, Firstname, Lastname, TypeContact, Phone,Urgence);
         }
     }
 }

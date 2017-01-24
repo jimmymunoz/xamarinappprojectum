@@ -14,7 +14,7 @@ namespace SeniorAssistance.Model
 
         public DateTime StartDate { get; set; }
 
-        public int Enabled { get; set; }      
+        public bool Enabled { get; set; }      
 
         public override string ToString()
         {

@@ -18,6 +18,7 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
 					<RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
                     
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
@@ -27,12 +28,15 @@
                 <Label Text="First Name:" Grid.Row="0" Grid.Column="0"  />
                 <Label Text="Last Name:" Grid.Row="1" Grid.Column="0" />
                 <Label Text="Phone" Grid.Row="2" Grid.Column="0" />
+                <Label Text="Notify in case of emergency " Grid.Row="3" Grid.Column="0" />
+                
 				<Entry Text="{Binding ID}" x:Name="ID" IsVisible="false"/>
                 <Entry Text="{Binding Firstname}" Grid.Row="0" Grid.Column="1" x:Name="Firstname" />
                 <Entry Text="{Binding Lastname}" Grid.Row="1" Grid.Column="1" x:Name="Lastname"/>
                 <Entry Text="{Binding Phone}" Grid.Row="2" Grid.Column="1" x:Name="Phone" Keyboard="Telephone"/>
-                <Entry Text="{Binding Urgence}" Grid.Row="2" Grid.Column="1" x:Name="Phone" Keyboard="Telephone"/>
-                <Grid x:Name="buttonsGrid"  Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="#CCCCCC">
+                
+                <Switch IsToggled="{Binding Urgence}" HorizontalOptions="EndAndExpand" Grid.Row="3" Grid.Column="1" x:Name="Urgence"/>
+                <Grid x:Name="buttonsGrid"  Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="#CCCCCC">
 	                <Grid.ColumnDefinitions>
 	                    <ColumnDefinition Width="*" />
 	                    <ColumnDefinition Width="*" />

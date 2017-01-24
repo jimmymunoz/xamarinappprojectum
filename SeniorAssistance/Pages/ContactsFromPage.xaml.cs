@@ -30,6 +30,8 @@ namespace SeniorAssistance
                     Firstname = Firstname.Text,
                     Lastname = Lastname.Text,
                     Phone = Phone.Text,
+                    //Urgence = Urgence
+
                 };
                 item.TypeContact = action;
 

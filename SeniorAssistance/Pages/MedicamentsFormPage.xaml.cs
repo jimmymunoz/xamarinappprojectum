@@ -7,8 +7,8 @@ using Xamarin.Forms;
 
 namespace SeniorAssistance
 {
-	public partial class MedicamentsFormPage : ContentPage
-	{
+    public partial class MedicamentsFormPage : ContentPage
+    {
         MedicamentDatabase database;
         ObservableCollection<Medicament> Items1 { get; set; }
 
@@ -16,30 +16,30 @@ namespace SeniorAssistance
         {
             InitializeComponent();
 
-            database= new MedicamentDatabase();
+            database = new MedicamentDatabase();
             Items1 = new ObservableCollection<Medicament>();
             // Liste des alert
             //ItemList.ItemsSource = Items1;
 
-            
+
             BtnSave.Clicked += async (sender, e) =>
             {
-                if (string.IsNullOrWhiteSpace(Name.Text) || string.IsNullOrWhiteSpace(Enabled.Text))
+                if (string.IsNullOrWhiteSpace(Name.Text))
                     return;
                 Medicament medicament = new Medicament
                 {
                     Name = Name.Text,
                     //StartDate = StartDate.BindingContext
                     StartDate = StartDate.Date,
-                    Enabled = Int32.Parse(Enabled.Text),
+                    Enabled = Enabled.IsToggled,
 
-            	};
+                };
                 if (!string.IsNullOrWhiteSpace(ID.Text))
                     medicament.ID = Int32.Parse(ID.Text);
 
                 database.SaveItem(medicament);
 
-                var answer = await DisplayAlert("Exit", "Want to add alert for this drug " + medicament, "Yes", "No");
+                var answer = await DisplayAlert("Exit", "Want to add alert for this Medicament :  s" + medicament.Name, "Yes", "No");
                 if (answer)
                 {
                     //item = e.SelectedItem as Medicament;
@@ -49,9 +49,9 @@ namespace SeniorAssistance
 
                 }
                 else
-                await Navigation.PushAsync(new MedicamentsPage());
+                    await Navigation.PushAsync(new MedicamentsPage());
             };
-            
+
             BtnCancel.Clicked += (sender, e) =>
             {
                 Navigation.PushAsync(new MedicamentsPage());
@@ -69,9 +69,9 @@ namespace SeniorAssistance
                 {
                     Medicament item = new Medicament
                     {
-                        Name = Name.Text,                        
+                        Name = Name.Text,
                         StartDate = ((DateTime)StartDate.Date),
-                        Enabled = Int32.Parse(Enabled.Text)
+                        // Enabled = Int32.Parse(Enabled.Text)
                     };
                     item.ID = Int32.Parse(ID.Text);
                     database.Connection.Delete(item);
