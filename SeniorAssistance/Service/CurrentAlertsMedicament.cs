@@ -11,19 +11,26 @@ using System.Diagnostics.Contracts;
 //using Newtonsoft.Json;
 using System.Diagnostics;
 using System.Text;
-
+using Newtonsoft.Json;
+using System.Net.Http;
 
 namespace SeniorAssistance
 {
 	public class CurrentAlertsMedicament
 	{
+		private static String urlServer = "http://46.101.40.23/smsenvoi/seniorasissms.php";
 		private static CurrentAlertsMedicament instance { get; set; }
+		HttpClient client;
+
 		AlertDatabase database;
 		ObservableCollection<Alert> ListAlerts { get; set; }
 		ObservableCollection<Alert> ListAlertsValidated { get; set; }
 
 		private CurrentAlertsMedicament()
 		{
+			client = new HttpClient();
+			client.MaxResponseContentBufferSize = 256000;
+
 			database = new AlertDatabase();
 			ListAlerts = new ObservableCollection<Alert>();
 			ListAlertsValidated = new ObservableCollection<Alert>();
@@ -138,24 +145,26 @@ namespace SeniorAssistance
 			return result;
 		}
 
-		public async Task SaveTodoItemAsync(TodoItem item, bool isNewItem = false)
+		public async Task sendSms(SMSMessage sms)
 		{
-			/*
-			// RestUrl = http://developer.xamarin.com:8081/api/todoitems{0}
-			var uri = new Uri(string.Format(Constants.RestUrl, item.ID));
-			var json = JsonConvert.SerializeObject(item);
-			var content = new StringContent(json, Encoding.UTF8, "application/json");
+			var uri = new Uri(string.Format(urlServer, ""));
 
+			var postData = new List<KeyValuePair<string, string>>();
+			postData.Add(new KeyValuePair<string, string>("smsto", sms.smsto));
+			postData.Add(new KeyValuePair<string, string>("smsmsg", sms.smsmsg));
+			postData.Add(new KeyValuePair<string, string>("smsappname", sms.smsappname));
+
+			HttpContent content = new FormUrlEncodedContent(postData);
 			HttpResponseMessage response = null;
-			if (isNewItem)
-			{
-				response = await client.PostAsync(uri, content);
-			}
+			response = await client.PostAsync(uri, content);
+
 			if (response.IsSuccessStatusCode)
 				{
-					Debug.WriteLine("TodoItem successfully saved.");
+					var contentResponse = await response.Content.ReadAsStringAsync();
+					Debug.WriteLine("SMS Sent: " + contentResponse);
+					//var Items = JsonConvert.DeserializeObject<List<SMSMessage>>(contentResponse);
+					//Debug.WriteLine("Response ");
 				}
 		   }
-			*/
 	}
 }
