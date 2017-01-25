@@ -6,6 +6,8 @@ using Xamarin.Forms.Maps;
 using Plugin.Geolocator;
 using System.Diagnostics;
 using System.Threading.Tasks;
+using System.Net.Http;
+using Newtonsoft.Json;
 
 namespace SeniorAssistance
 {
@@ -13,9 +15,12 @@ namespace SeniorAssistance
 	{
 		//public List<CustomPin> CustomPins { get; set; }
 		Map map;
+		HttpClient client;
 
 		public HospitalsPage()
 		{
+			client = new HttpClient();
+			client.MaxResponseContentBufferSize = 256000;
 			InitializeComponent();
 			map = new Map(
 				MapSpan.FromCenterAndRadius(
@@ -43,8 +48,25 @@ namespace SeniorAssistance
 
 		}
 
+		private async Task getHospitalsFromGoogle() 
+		{
+			String urlServer = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=43.6322777,3.8621022&radius=500&types=hospital&key=AIzaSyCf1xcj8zbW9Pq1KycOYIw0js7We3j8l0I&signature=nOY3pLh7h5SMsXysd9dJCapXz4s=";
+			var uri = new Uri(string.Format(urlServer, string.Empty));
 
-		private void addMapPins() { 
+			var response = await client.GetAsync(uri);
+
+			Debug.WriteLine("Parse response", response);
+			if (response.IsSuccessStatusCode)
+			{
+				var content = await response.Content.ReadAsStringAsync();
+				List<GoogleApiResponseJson> Items = JsonConvert.DeserializeObject<List<GoogleApiResponseJson>>(content);
+				Debug.WriteLine("Parse ok", Items);
+			}
+		
+		}
+
+
+		private void addMapPins() {
 			
 			var position = new Position(43.6322777, 3.8621022); // Latitude, Longitude
 			var pin = new Pin
@@ -55,6 +77,7 @@ namespace SeniorAssistance
 				Address = "La fac"
 			};
 			map.Pins.Add(pin);
+			getHospitalsFromGoogle();
 		}
 
 		private async Task<Map> moveMapToCurrentPosition()

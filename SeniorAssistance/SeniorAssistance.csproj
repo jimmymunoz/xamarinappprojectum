@@ -166,6 +166,7 @@
     <Compile Include="Timer.cs" />
     <Compile Include="Service\SMSMessage.cs" />
     <Compile Include="Maps\CustomPin.cs" />
+    <Compile Include="Service\GoogleApiResponseJson.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Mono.Android">
