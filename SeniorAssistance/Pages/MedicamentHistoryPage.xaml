@@ -10,7 +10,7 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="100" />
             </Grid.ColumnDefinitions>
-            <Grid x:Name="innerGrid" Grid.Column="0" Padding="10">
+            <Grid x:Name="innerGrid" Grid.Column="0" Padding="5">
                 <StackLayout Orientation="Vertical" Grid.Row="0" Grid.Column="0">
                     <Button Text="Refresh list" x:Name="btnRefreshList">
                     </Button>
@@ -22,8 +22,7 @@
                                         <Grid Padding="5" >
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="*" />
-                                                <ColumnDefinition Width="2*" />
-                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="3*" />
                                             </Grid.ColumnDefinitions>
                                             <Grid.RowDefinitions>
                                                 <RowDefinition Height="*" />

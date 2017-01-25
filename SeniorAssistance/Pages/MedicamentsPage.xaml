@@ -28,20 +28,18 @@
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <ViewCell>
-                                        <Grid Padding="5" >
+                                        <Grid Padding="3" >
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="*" />
-                                                <ColumnDefinition Width="2*" />
                                             </Grid.ColumnDefinitions>
                                             <Grid.RowDefinitions>
                                                 <RowDefinition Height="*" />
                                                 <RowDefinition Height="*" />
-                                                
+												<RowDefinition Height="*" />
                                             </Grid.RowDefinitions>
-                                            
-                                            <Label Text="{Binding Name}" Grid.Row="0" Grid.Column="0" FontAttributes="Bold" FontSize="Medium"/>
-                                            <Label Text="{Binding StartDate}" Grid.Row="1" Grid.Column="0" />
-                                            <Label Text="{Binding Enabled}" Grid.Row="2" Grid.Column="0" />
+                                            <Label Text="{Binding Name}" Grid.Row="0" Grid.Column="0" FontAttributes="Bold" FontSize="Small"/>
+                                            <Label Text="{Binding StartDate}" Grid.Row="1" Grid.Column="0" FontSize="Small"/>
+                                            <Label Text="{Binding EnabledText}"  TextColor="{Binding EnabledColor}" Grid.Row="2" Grid.Column="0" FontSize="Small" />
                                         </Grid>
                                     </ViewCell>
                                 </DataTemplate>

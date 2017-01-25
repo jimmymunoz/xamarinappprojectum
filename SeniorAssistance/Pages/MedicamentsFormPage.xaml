@@ -35,18 +35,19 @@
                 </DatePicker>
                 <Switch IsToggled="{Binding Enabled}" HorizontalOptions="EndAndExpand" Grid.Row="2" Grid.Column="1" x:Name="Enabled"/>
                 <Grid x:Name="buttonsGrid"  Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="#CCCCCC">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
+                	<Grid.RowDefinitions>
+	                    <RowDefinition Height="Auto" />
+	                    <RowDefinition Height="Auto" />
+	                </Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <Button x:Name="BtnCancel" Text="Cancel" Grid.Column="0" />
-                    <Button x:Name="BtnSave" Text="Save" Grid.Column="1" />
-                    <Button x:Name="BtnDelete" Text="Delete" Grid.Column="2" />
-                    <Button x:Name="BtnAlert" Text="See Alert" Grid.Column="3" />
+                    <Button x:Name="BtnCancel" Text="Cancel" Grid.Row="0" Grid.Column="0" />
+                    <Button x:Name="BtnSave" Text="Save" Grid.Row="0" Grid.Column="1" />
+                    <Button x:Name="BtnDelete" Text="Delete" Grid.Row="1" Grid.Column="0" />
+                    <Button x:Name="BtnAlert" Text="See Alerts" Grid.Row="1" Grid.Column="1" />
                 </Grid>
-
             </Grid>
             <common:NavigationToolbar Grid.Column="1">
             </common:NavigationToolbar>

@@ -14,7 +14,11 @@ namespace SeniorAssistance.Model
 
         public DateTime StartDate { get; set; }
 
-        public bool Enabled { get; set; }      
+        public bool Enabled { get; set; }   
+
+		public string EnabledText => string.Format("{0}{1}", (Enabled) ? "Enabled" : "Disabled", "");
+
+		public string EnabledColor => string.Format("{0}", (Enabled) ? "#119b31" : "#f20909");
 
         public override string ToString()
         {
