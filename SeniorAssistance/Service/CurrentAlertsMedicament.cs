@@ -116,42 +116,25 @@ namespace SeniorAssistance
 				if (instance.validateAlertByTimeSpam(time))
 				{
                     CurrentAlertsMedicament.getInstance().createMedicamentHistoryByAlerts();
-                    token.ThrowIfCancellationRequested();
-					await Task.Delay(250);
-
-					var message = new TickedMessage
-					{
-						Message = CurrentAlertsMedicament.getInstance().getValidatedAlerts()
-					};
-                    /*
-					Device.BeginInvokeOnMainThread(() =>
-					{
-						MessagingCenter.Send<TickedMessage>(message, "TickedMessage");
-					});
-                    */
-				}
-			}, token);
-
-		}
-
-		public static object validateAndNotifyAlertsByTimeSpam(DateTime time)
-		{
-			if (instance.validateAlertByTimeSpam(time))
-			{
-                CurrentAlertsMedicament.getInstance().createMedicamentHistoryByAlerts();
-                var message = new TickedMessage
-				{
-					Message = CurrentAlertsMedicament.getInstance().getValidatedAlerts()
-				};
-                /*
-				Device.BeginInvokeOnMainThread(() =>
-				{
-					MessagingCenter.Send<TickedMessage>(message, "TickedMessage");
-				});
-                */
                 }
-                return "";
+                Debug.WriteLine("validateAndNotifyAlertsByTimeSpam " + time);
+                token.ThrowIfCancellationRequested();
+                await Task.Delay(60000);//1 minute
+
+                var message = new TickedMessage
+                {
+                    Message = CurrentAlertsMedicament.getInstance().getValidatedAlerts()
+                };
+
+                Device.BeginInvokeOnMainThread(() =>
+                {
+                    MessagingCenter.Send<TickedMessage>(message, "TickedMessage");
+                });
+            }, token);
+
 		}
+
+		
 
 		public String getActiveAlerts()
 		{

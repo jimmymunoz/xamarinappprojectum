@@ -5,11 +5,11 @@ using SeniorAssistance.Model;
 
 namespace SeniorAssistance.Database
 {
-  public class MedicamentHistoryDatabase : CrudDatabase
+  public class ContactDatabase : CrudDatabase
     {
         protected override void initDababase()
         {
-            Connection.CreateTable<MedicamentHistory>();
+            Connection.CreateTable<Contact>();
         }  
     }
 }

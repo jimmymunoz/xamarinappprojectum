@@ -34,7 +34,7 @@ namespace SeniorAssistance
 
             var tapImageHistoryMedicament = new TapGestureRecognizer();
             tapImageHistoryMedicament.Tapped += clickImageHistoryMedicament;
-            btnHistory.GestureRecognizers.Add(tapImageGames);
+            btnHistory.GestureRecognizers.Add(tapImageHistoryMedicament);
 
             SendMessage.Clicked += (sender, e) =>
 			{

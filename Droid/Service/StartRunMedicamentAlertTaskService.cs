@@ -28,22 +28,23 @@ namespace SeniorAssistance.Droid
 			Console.WriteLine("OnStartCommand Android!");
 
 			_cts = new CancellationTokenSource();
-			CurrentAlertsMedicament.validateAndNotifyAlertsByTimeSpam(_cts.Token, DateTime.Now).Wait();
-
-
+			
+            
 			Task.Run(() =>
 			{
 				try
 				{
-					//INVOKE THE SHARED CODE
-
-					var timer = new System.Threading.Timer(
+                    //INVOKE THE SHARED CODE
+                    /*
+                    var timer = new System.Threading.Timer(
 						//(e) => Console.WriteLine("Time Android! " + DateTime.Now),
 						(e) => CurrentAlertsMedicament.validateAndNotifyAlertsByTimeSpam(_cts.Token, DateTime.Now).Wait(),
 						null,
 						0, (int)TimeSpan.FromMinutes(1).TotalMilliseconds);
-
-					/*
+                    */
+                    Console.WriteLine("Time Android! " + DateTime.Now);
+                    CurrentAlertsMedicament.validateAndNotifyAlertsByTimeSpam(_cts.Token, DateTime.Now).Wait();
+                    /*
 					while (timer != null)
 					{
 						Console.WriteLine("Time Android! " + DateTime.Now);
@@ -51,9 +52,9 @@ namespace SeniorAssistance.Droid
 					}
 					*/
 
-					//var counter = new TaskCounter()
-					//counter.RunCounter(_cts.Token).Wait();
-				}
+                    //var counter = new TaskCounter()
+                    //counter.RunCounter(_cts.Token).Wait();
+                }
 				catch (Android.Accounts.OperationCanceledException)
 				{
 				}
