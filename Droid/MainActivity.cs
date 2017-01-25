@@ -32,7 +32,7 @@ namespace SeniorAssistance.Droid
           	
 			var intent = new Intent(this, typeof(StartRunMedicamentAlertTaskService));
 			StartService(intent);
-			/*
+            /*
 			MessagingCenter.Subscribe<StartRunMedicamentAlertTaskMessage>(this, "StartRunMedicamentAlert", message =>
 			{
 				Console.WriteLine("New Message StartRunMedicamentAlertTaskService Android!");
@@ -40,13 +40,17 @@ namespace SeniorAssistance.Droid
 				StartService(intent);
 			});
 			*/
-
+            MessagingCenter.Subscribe<SendNotification>(this, "SendNotification", message =>
+            {
+                Console.WriteLine("SendNotification");
+                Notification(message);
+            });
 
             LoadApplication(new App());
-			Notification();
+			
         }
         
-		public void Notification()
+		public void Notification(SendNotification message)
 		{
             // Setup an intent for SecondActivity:
             Intent secondIntent = new Intent(this, typeof(MainActivity));
@@ -70,11 +74,11 @@ namespace SeniorAssistance.Droid
                 stackBuilder.GetPendingIntent(pendingIntentId, PendingIntentFlags.OneShot);
 
             Notification.Builder builder = new Notification.Builder(this)
-            .SetContentIntent(pendingIntent)
-            .SetContentTitle("C'est un test de notification ")
-			.SetContentText("Teste notification coté android!")
-			.SetDefaults(NotificationDefaults.Sound)
-			.SetSmallIcon(Resource.Drawable.alarm);
+                .SetContentIntent(pendingIntent)
+                .SetContentTitle(message.Titre)
+			    .SetContentText(message.Text)
+			    .SetDefaults(NotificationDefaults.Sound)
+			    .SetSmallIcon(Resource.Drawable.alarm);
 
 			// Build the notification:
 			Notification notification = builder.Build();

@@ -25,17 +25,25 @@ namespace SeniorAssistance
             ListMedicamentHistory = new ObservableCollection<MedicamentHistory>();
             MedicamentsHistoryView.ItemsSource = ListMedicamentHistory;
 
-            RefreshList();
             MedicamentsHistoryView.ItemSelected += async (sender, e) =>
             {
                 await DisplayAlert("Selected", e.SelectedItem.ToString() + " was selected.", "OK");
+                MedicamentHistory item = (MedicamentHistory) e.SelectedItem;
+                item.Taken = true;
+                database.SaveItem(item);
+                RefreshList();
             };
+            btnRefreshList.Clicked += (sender, e) =>
+            {
+                RefreshList();
+            };
+            RefreshList();
         }
 
         private void RefreshList()
         {
             ListMedicamentHistory.Clear();
-            var items = (from i in database.GetItems<MedicamentHistory>()
+            var items = (from i in database.GetItems<MedicamentHistory>() orderby i.SendDate descending
                          select i);
 
             foreach (var item in items)

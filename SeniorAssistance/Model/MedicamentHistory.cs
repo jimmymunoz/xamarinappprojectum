@@ -26,6 +26,10 @@ namespace SeniorAssistance.Model
 
         public Boolean Notified { get; set; }
 
+        public string NotifiedText => string.Format("{0}{1}", (Notified) ? "Notified" : "", "");
+
+        public string NotifiedColor => string.Format("{0}", (Notified) ? "#119b31" : "#f20909");
+
         public override string ToString()
         {
             return string.Format("[MedacamentHistory: ID={0}, IdAlert={1}, Message={2},SendDate={3},Taken={4},ExpireDate={5},Notified={6}]", ID, IdAlert, Message, SendDate,Taken,ExpireDate, Notified);

@@ -36,20 +36,6 @@ namespace SeniorAssistance
             tapImageHistoryMedicament.Tapped += clickImageHistoryMedicament;
             btnHistory.GestureRecognizers.Add(tapImageHistoryMedicament);
 
-            SendMessage.Clicked += (sender, e) =>
-			{
-				/*
-				var smsMessenger = MessagingPlugin.SmsMessenger;
-				if (smsMessenger.CanSendSms)
-					smsMessenger.SendSms("+33698599684", "Hello from your friends at Xamarin!");
-				*/
-				SMSMessage sms = new SMSMessage();
-				sms.smsmsg = "Jimmy ne triche pas";
-				sms.smsto = "+33789654004";
-				CurrentAlertsMedicament.getInstance().sendSms(sms);
-			};
-
-
 		}
 
 		void clickImageInternet(object sender, EventArgs e)
