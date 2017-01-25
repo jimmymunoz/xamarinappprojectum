@@ -61,6 +61,8 @@ namespace SeniorAssistance.Database
             int count =  Connection.Table<T>().Count();
             return count;
         }
+       
+        
         public int DeleteItem<T>(T item) where T : ITable
         {
             return Connection.Delete(item);

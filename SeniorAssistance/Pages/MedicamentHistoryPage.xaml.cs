@@ -25,9 +25,9 @@ namespace SeniorAssistance
             ListMedicamentHistory = new ObservableCollection<MedicamentHistory>();
             MedicamentsHistoryView.ItemsSource = ListMedicamentHistory;
 
-            MedicamentsHistoryView.ItemSelected += async (sender, e) =>
+            MedicamentsHistoryView.ItemSelected += (sender, e) =>
             {
-                await DisplayAlert("Selected", e.SelectedItem.ToString() + " was selected.", "OK");
+                //await DisplayAlert("Selected", e.SelectedItem.ToString() + " was selected.", "OK");
                 MedicamentHistory item = (MedicamentHistory) e.SelectedItem;
                 item.Taken = true;
                 database.SaveItem(item);

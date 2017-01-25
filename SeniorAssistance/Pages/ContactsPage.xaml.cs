@@ -10,7 +10,7 @@ namespace SeniorAssistance
 {
     public partial class ContactsPage : ContentPage
     {
-        MedicamentHistoryDatabase databaseContact;
+        ContactDatabase databaseContact;
         ContactTypeDatabase databaseConntactType;
         ObservableCollection<ContactsTypeContact> ListContact { get; set; }
         ObservableCollection<ContactsTypeContact> liste { get; set; }
@@ -18,7 +18,7 @@ namespace SeniorAssistance
         public ContactsPage()
         {
             InitializeComponent();
-            databaseContact = new MedicamentHistoryDatabase();
+            databaseContact = new  ContactDatabase();
             databaseConntactType = new ContactTypeDatabase();
             ListContact = new ObservableCollection<ContactsTypeContact>();
             liste = new ObservableCollection<ContactsTypeContact>();
@@ -42,7 +42,7 @@ namespace SeniorAssistance
             ContactsTypeContact itemListView = new ContactsTypeContact();
             
             var TypeContacts = (from i in databaseConntactType.GetItems<ContactType>() select i).Distinct().ToList();
-            var Contacts = (from j in databaseConntactType.GetItems<Contact>() select j).Distinct().ToList();
+            var Contacts = (from j in databaseContact.GetItems<Contact>() select j).Distinct().ToList();
 
 
             foreach (var contact in Contacts)
