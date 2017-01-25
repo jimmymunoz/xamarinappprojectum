@@ -32,7 +32,11 @@ namespace SeniorAssistance
 			tapImageGames.Tapped += clickImageGames;
 			btnGames.GestureRecognizers.Add(tapImageGames);
 
-			SendMessage.Clicked += (sender, e) =>
+            var tapImageHistoryMedicament = new TapGestureRecognizer();
+            tapImageHistoryMedicament.Tapped += clickImageHistoryMedicament;
+            btnHistory.GestureRecognizers.Add(tapImageGames);
+
+            SendMessage.Clicked += (sender, e) =>
 			{
 				/*
 				var smsMessenger = MessagingPlugin.SmsMessenger;
@@ -68,7 +72,10 @@ namespace SeniorAssistance
 			Navigation.PushAsync(new WebViewInternet("http://fr.ibraining.com/memorize/","Jeux de mémorisation"));
 		}
 
+        void clickImageHistoryMedicament(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new MedicamentHistoryPage());
+        }
 
-
-	}
+    }
 }

@@ -28,10 +28,10 @@ namespace SeniorAssistance.Droid
 			base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
-            ContactDatabase.Root = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+            MedicamentHistoryDatabase.Root = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
           	
-			//var intent = new Intent(this, typeof(StartRunMedicamentAlertTaskService));
-			//StartService(intent);
+			var intent = new Intent(this, typeof(StartRunMedicamentAlertTaskService));
+			StartService(intent);
 			/*
 			MessagingCenter.Subscribe<StartRunMedicamentAlertTaskMessage>(this, "StartRunMedicamentAlert", message =>
 			{

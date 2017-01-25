@@ -22,18 +22,22 @@ namespace SeniorAssistance
 		private static CurrentAlertsMedicament instance { get; set; }
 		HttpClient client;
 
-		AlertDatabase database;
-		ObservableCollection<Alert> ListAlerts { get; set; }
-		ObservableCollection<Alert> ListAlertsValidated { get; set; }
+		AlertDatabase databaseAlert;
+        MedicamentDatabase databaseMedicament;
+        MedicamentDatabase databaseMedicamentHistory;
+        ObservableCollection<AlertMedicament> ListAlertMedicaments { get; set; }
+		ObservableCollection<AlertMedicament> ListAlertsMedicamentValidated { get; set; }
 
 		private CurrentAlertsMedicament()
 		{
 			client = new HttpClient();
 			client.MaxResponseContentBufferSize = 256000;
 
-			database = new AlertDatabase();
-			ListAlerts = new ObservableCollection<Alert>();
-			ListAlertsValidated = new ObservableCollection<Alert>();
+			databaseAlert = new AlertDatabase();
+            databaseMedicament = new MedicamentDatabase();
+            databaseMedicamentHistory = new MedicamentDatabase();
+            ListAlertMedicaments = new ObservableCollection<AlertMedicament>();
+			ListAlertsMedicamentValidated = new ObservableCollection<AlertMedicament>();
 			updateListAlert();
 		}
 
@@ -47,20 +51,39 @@ namespace SeniorAssistance
 
 		public void updateListAlert()
 		{
-			ListAlerts.Clear();
-            var items = (from i in database.GetItems<Alert>()
-						 select i);
+            ListAlertMedicaments.Clear();
+            var ListAlerts = (from i in databaseAlert.GetItems<Alert>() select i).Distinct().ToList();
+            var ListMedicaments = (from j in databaseMedicament.GetItems<Medicament>() where j.Enabled = true && j.StartDate < DateTime.Now select j).Distinct().ToList();
 
-            foreach (var item in items)
+
+            foreach (var alert in ListAlerts)
             {
-                ListAlerts.Add(item);
+                foreach (var medicament in ListMedicaments)
+                {
+                    int a = alert.Idmedicament;
+                    int m = medicament.ID;
+                    if (a.Equals(m))
+                    {
+                        AlertMedicament alertMedicament = new AlertMedicament();
+                        alertMedicament.IdAlert = alert.ID;
+                        alertMedicament.Hour = alert.Hour;
+                        alertMedicament.Freq = alert.Freq;
+                        alertMedicament.Idmedicament = medicament.ID;
+                        alertMedicament.Name = medicament.Name;
+                        alertMedicament.StartDate = medicament.StartDate;
+                        alertMedicament.Enabled = medicament.Enabled;
+                        ListAlertMedicaments.Add(alertMedicament);
+                        break;
+                    }
+                }
             }
+            
 		}
 
 		public Boolean validateAlertByTimeSpam(DateTime time) 
 		{
 			Boolean valid = false;
-			foreach (var alert in ListAlerts) {
+			foreach (var alert in ListAlertMedicaments) {
 				string[] listhour = alert.Hour.Split(':');
 				if (time.Hour.Equals(Int32.Parse(listhour[0])) && time.Minute.Equals(Int32.Parse(listhour[1])))
 				{
@@ -74,13 +97,13 @@ namespace SeniorAssistance
 
 		public void setValidatedAlertsByTimeSpam(DateTime time)
 		{
-			ListAlertsValidated = new ObservableCollection<Alert>();
-			foreach (var alert in ListAlerts)
+			ListAlertsMedicamentValidated = new ObservableCollection<AlertMedicament>();
+			foreach (var alert in ListAlertMedicaments)
 			{
 				string[] listhour = alert.Hour.Split(':');
 				if (time.Hour.Equals( Int32.Parse(listhour[0]) ) && time.Minute.Equals( Int32.Parse(listhour[1]) ))
 				{
-					ListAlertsValidated.Add(alert);
+					ListAlertsMedicamentValidated.Add(alert);
 					break;
 				}
 			}
@@ -91,19 +114,21 @@ namespace SeniorAssistance
 			await Task.Run(async () =>
 			{
 				if (instance.validateAlertByTimeSpam(time))
-				{ 
-					token.ThrowIfCancellationRequested();
+				{
+                    CurrentAlertsMedicament.getInstance().createMedicamentHistoryByAlerts();
+                    token.ThrowIfCancellationRequested();
 					await Task.Delay(250);
 
 					var message = new TickedMessage
 					{
 						Message = CurrentAlertsMedicament.getInstance().getValidatedAlerts()
 					};
-
+                    /*
 					Device.BeginInvokeOnMainThread(() =>
 					{
 						MessagingCenter.Send<TickedMessage>(message, "TickedMessage");
 					});
+                    */
 				}
 			}, token);
 
@@ -113,23 +138,25 @@ namespace SeniorAssistance
 		{
 			if (instance.validateAlertByTimeSpam(time))
 			{
-				var message = new TickedMessage
+                CurrentAlertsMedicament.getInstance().createMedicamentHistoryByAlerts();
+                var message = new TickedMessage
 				{
 					Message = CurrentAlertsMedicament.getInstance().getValidatedAlerts()
 				};
-
+                /*
 				Device.BeginInvokeOnMainThread(() =>
 				{
 					MessagingCenter.Send<TickedMessage>(message, "TickedMessage");
 				});
-			}
-			return "";
+                */
+                }
+                return "";
 		}
 
 		public String getActiveAlerts()
 		{
 			String result = "";
-			foreach (var alert in ListAlerts)
+			foreach (var alert in ListAlertMedicaments)
 			{
 				result += alert.Hour + " - " + alert.Idmedicament + " ";
 			}
@@ -138,14 +165,35 @@ namespace SeniorAssistance
 
 		public String getValidatedAlerts() {
 			String result = "";
-			foreach (var alert in ListAlertsValidated)
+			foreach (var alert in ListAlertsMedicamentValidated)
 			{
 				result += alert.Hour + " - " + alert.Idmedicament + " ";
 			}
 			return result;
 		}
 
-		public async Task sendSms(SMSMessage sms)
+        public void createMedicamentHistoryByAlerts()
+        {
+            foreach (var alertMedicament in ListAlertsMedicamentValidated)
+            {
+                String message = "Please take the medicament [" + alertMedicament.Name + "] (" + alertMedicament.Hour + ")";
+                MedicamentHistory medicamentHistory = new MedicamentHistory
+                {
+                    IdAlert = alertMedicament.IdAlert,
+                    Message = message,
+                    SendDate = DateTime.Now,
+                    Taken = false,
+                    ExpireDate = DateTime.Now.AddHours(1),
+                    Notified = true
+                };
+
+                databaseMedicamentHistory.SaveItem(medicamentHistory);
+                //TODO: Send noti
+            }
+
+        }
+
+        public async Task sendSms(SMSMessage sms)
 		{
 			var uri = new Uri(string.Format(urlServer, ""));
 

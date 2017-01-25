@@ -41,7 +41,11 @@
                     <Image x:Name="btnGames" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Source="humanbrain.png" Grid.Row="0" HeightRequest="80" WidthRequest="80" />
                     <Label Text="Jeux" FontAttributes="Bold" FontSize="15" HorizontalTextAlignment="Center" />
                 </StackLayout>
-				<StackLayout Grid.Row="1" Grid.Column="2" Orientation="Vertical">
+                <StackLayout Grid.Row="1" Grid.Column="1" Orientation="Vertical">
+                    <Image x:Name="btnHistory" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Source="medicament.png" Grid.Row="0" HeightRequest="80" WidthRequest="80" />
+                    <Label Text="Medicament History" FontAttributes="Bold" FontSize="15" HorizontalTextAlignment="Center" />
+                </StackLayout>
+                <StackLayout Grid.Row="1" Grid.Column="2" Orientation="Vertical">
                     <Button x:Name="SendMessage" Text="Notification" Style="{StaticResource buttonStyle}"/>
                 </StackLayout>
                 

@@ -10,13 +10,13 @@ namespace SeniorAssistance
 {
 	public partial class ConfigContactsPage : ContentPage
 	{
-        ContactDatabase database;
+        MedicamentHistoryDatabase database;
 
 		ObservableCollection<Contact> ListContacts { get; set; }
 
 		public ConfigContactsPage()
 		{
-			database = new ContactDatabase();
+			database = new MedicamentHistoryDatabase();
 			InitializeComponent();
             ListContacts = new ObservableCollection<Contact>();
 			ContactsView.ItemsSource = ListContacts;

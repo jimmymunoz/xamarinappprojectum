@@ -10,12 +10,12 @@ namespace SeniorAssistance
 {
 	public partial class ContactsFromPage : ContentPage
 	{
-        ContactDatabase database;
+        MedicamentHistoryDatabase database;
 
         public ContactsFromPage()
 		{
 			InitializeComponent();
-            database = new ContactDatabase();
+            database = new MedicamentHistoryDatabase();
           
             BtnSave.Clicked += async (sender, e) =>
             {
