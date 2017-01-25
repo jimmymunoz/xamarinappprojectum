@@ -16,7 +16,7 @@ namespace SeniorAssistance.Model
         public string TypeContact { get; set; }
 
         public string Phone { get; set; }
-        public bool Urgence { get; set; }
+		public bool Urgence { get; set; } 
 
         public override string ToString()
         {

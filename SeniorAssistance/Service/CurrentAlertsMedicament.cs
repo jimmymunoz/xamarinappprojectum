@@ -159,7 +159,7 @@ namespace SeniorAssistance
                     SendDate = DateTime.Now,
                     Taken = false,
                     //ExpireDate = DateTime.Now.AddHours(1),
-                    ExpireDate = DateTime.Now.AddMinutes(3),
+                    ExpireDate = DateTime.Now.AddMinutes(2),
                     Notified = false
                 };
                 databaseMedicamentHistory.SaveItem(medicamentHistory);
@@ -250,7 +250,6 @@ namespace SeniorAssistance
 			HttpContent content = new FormUrlEncodedContent(postData);
 			HttpResponseMessage response = null;
 			response = await client.PostAsync(uri, content);
-
 
 			if (response.IsSuccessStatusCode)
 				{

@@ -34,7 +34,7 @@ namespace SeniorAssistance
                 if (e.SelectedItem != null)
                 {
                     var contact = e.SelectedItem as ContactDatabase;
-                    var secondPage = new ContactsFromPage();
+					var secondPage = new ContactsFromPage();
                     secondPage.BindingContext = contact;
                     Navigation.PushAsync(secondPage);
                 }
@@ -58,16 +58,19 @@ namespace SeniorAssistance
                 itemListView.Firstname = contact.Firstname;
                 itemListView.TypeContact = contact.TypeContact;
                 itemListView.Phone = contact.Phone;
+				//itemListView.Urgence = contact.Urgence;
                 itemListView.Image = "family.png";
                 foreach (var typeContact in TypeContacts)
                 {
                     string c = contact.TypeContact;
                     string t = typeContact.Name;
-                    if (c.Equals(t))
-                    {
-                        itemListView.Image = typeContact.Image;
-                        break;
-                    }
+					if ( c != null && t != null ) { 
+						if (c.Equals(t))
+	                    {
+	                        itemListView.Image = typeContact.Image;
+	                        break;
+	                    }
+					}
                 }
                 ListContacts.Add(itemListView);
             }
