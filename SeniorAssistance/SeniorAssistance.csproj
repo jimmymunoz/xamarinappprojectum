@@ -85,9 +85,9 @@
     <Compile Include="Pages\EditMyProfilForm.xaml.cs">
       <DependentUpon>EditMyProfilForm.xaml</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Pages\MedicamentHistoryPage.xaml.cs">
+    <Compile Include="Pages\MedicamentHistoryPage.xaml.cs">
       <DependentUpon>MedicamentHistoryPage.xaml</DependentUpon>
-    </EmbeddedResource>
+    </Compile>
     <Compile Include="Pages\ProfilPage.xaml.cs">
       <DependentUpon>ProfilPage.xaml</DependentUpon>
     </Compile>

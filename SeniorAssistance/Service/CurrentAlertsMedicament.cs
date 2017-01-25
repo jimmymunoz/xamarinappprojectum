@@ -24,7 +24,7 @@ namespace SeniorAssistance
 
 		AlertDatabase databaseAlert;
         MedicamentDatabase databaseMedicament;
-        MedicamentDatabase databaseMedicamentHistory;
+        MedicamentHistoryDatabase databaseMedicamentHistory;
         ObservableCollection<AlertMedicament> ListAlertMedicaments { get; set; }
 		ObservableCollection<AlertMedicament> ListAlertsMedicamentValidated { get; set; }
 
@@ -35,7 +35,7 @@ namespace SeniorAssistance
 
 			databaseAlert = new AlertDatabase();
             databaseMedicament = new MedicamentDatabase();
-            databaseMedicamentHistory = new MedicamentDatabase();
+            databaseMedicamentHistory = new MedicamentHistoryDatabase();
             ListAlertMedicaments = new ObservableCollection<AlertMedicament>();
 			ListAlertsMedicamentValidated = new ObservableCollection<AlertMedicament>();
 			updateListAlert();
@@ -109,30 +109,15 @@ namespace SeniorAssistance
 			}
 		}
 
-		public async static Task validateAndNotifyAlertsByTimeSpam(CancellationToken token, DateTime time)
+		public static void validateAndNotifyAlertsByTimeSpam(CancellationToken token, DateTime time)
 		{
-			await Task.Run(async () =>
+			if (instance.validateAlertByTimeSpam(time))
 			{
-				if (instance.validateAlertByTimeSpam(time))
-				{
-                    CurrentAlertsMedicament.getInstance().createMedicamentHistoryByAlerts();
-                }
-                Debug.WriteLine("validateAndNotifyAlertsByTimeSpam " + time);
-                token.ThrowIfCancellationRequested();
-                await Task.Delay(60000);//1 minute
-
-                var message = new TickedMessage
-                {
-                    Message = CurrentAlertsMedicament.getInstance().getValidatedAlerts()
-                };
-
-                Device.BeginInvokeOnMainThread(() =>
-                {
-                    MessagingCenter.Send<TickedMessage>(message, "TickedMessage");
-                });
-            }, token);
-
-		}
+                Debug.WriteLine("validateAndNotifyAlertsByTimeSpam ok: " + time);
+                CurrentAlertsMedicament.getInstance().createMedicamentHistoryByAlerts();
+            }
+            Debug.WriteLine("validateAndNotifyAlertsByTimeSpam " + time);
+        }
 
 		
 

@@ -11,20 +11,9 @@
                 <ColumnDefinition Width="100" />
             </Grid.ColumnDefinitions>
             <Grid x:Name="innerGrid" Grid.Column="0" Padding="10">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="1.5*" />
-                </Grid.ColumnDefinitions>
                 <StackLayout Orientation="Vertical" Grid.Row="0" Grid.Column="0">
-                    <Image VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Source="web.png" Grid.Row="0" HeightRequest="80" WidthRequest="80" />
-                    <Button x:Name="btnAdd" Text="Ajouter"></Button>
-                </StackLayout>
-                <StackLayout Orientation="Vertical" Grid.Row="0" Grid.Column="1">
                     <ScrollView>
-                        <ListView x:Name="MedicamentsView" RowHeight="90">
+                        <ListView x:Name="MedicamentsHistoryView" RowHeight="120">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <ViewCell>
@@ -32,15 +21,18 @@
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="*" />
                                                 <ColumnDefinition Width="2*" />
+                                                <ColumnDefinition Width="*" />
                                             </Grid.ColumnDefinitions>
                                             <Grid.RowDefinitions>
                                                 <RowDefinition Height="*" />
                                                 <RowDefinition Height="*" />
                                                 <RowDefinition Height="*" />
                                             </Grid.RowDefinitions>
-                                            <Image Grid.RowSpan="3" Grid.Row="0" Grid.Column="0"  VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Source="web.png" HeightRequest="80" WidthRequest="80" />
-                                            <Label Text="{Binding Message}" Grid.Row="0" Grid.Column="1" FontAttributes="Bold" FontSize="Medium"/>
-                                           
+                                            <Image Grid.RowSpan="4" Grid.Row="0" Grid.Column="0"  VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Source="medical.png" HeightRequest="115" WidthRequest="115" />
+                                            <Label Text="{Binding Message}" Grid.Row="0" Grid.Column="1" FontSize="Medium"/>
+                                            <Label Text="{Binding SendDate}" Grid.Row="1" Grid.Column="1" FontSize="Small"/>
+                                            <Label Text="{Binding TakenText}" Grid.Row="2" Grid.Column="1" TextColor="{Binding TakenColor}" FontAttributes="Bold" FontSize="Medium"/>
+                                            <Switch IsToggled="{Binding Taken}" Toggled="switcher_Toggled" HorizontalOptions="EndAndExpand" Grid.Row="0" Grid.Column="2" IsEnabled="{Binding Enabled}"/>
                                         </Grid>
                                     </ViewCell>
                                 </DataTemplate>

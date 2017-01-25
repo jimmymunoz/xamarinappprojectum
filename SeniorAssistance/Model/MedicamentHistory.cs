@@ -16,6 +16,12 @@ namespace SeniorAssistance.Model
 
         public Boolean Taken { get; set; }
 
+        public Boolean Enabled => (! Taken );
+
+        public string TakenText => string.Format("{0}{1}", (Taken)? "TAKEN" : "UNTAKEN", "");
+
+        public string TakenColor => string.Format("{0}", (Taken) ? "#119b31" : "#f20909");
+        
         public DateTime ExpireDate { get; set; }
 
         public Boolean Notified { get; set; }

@@ -3,13 +3,14 @@ using SeniorAssistance.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
 
-namespace SeniorAssistance.Pages
+namespace SeniorAssistance
 {
     public partial class MedicamentHistoryPage : ContentPage
     {
@@ -22,9 +23,13 @@ namespace SeniorAssistance.Pages
             InitializeComponent();
             database = new MedicamentHistoryDatabase();
             ListMedicamentHistory = new ObservableCollection<MedicamentHistory>();
-            //ContactsViewAppel.ItemsSource = ListMedicamentHistory;
+            MedicamentsHistoryView.ItemsSource = ListMedicamentHistory;
 
             RefreshList();
+            MedicamentsHistoryView.ItemSelected += async (sender, e) =>
+            {
+                await DisplayAlert("Selected", e.SelectedItem.ToString() + " was selected.", "OK");
+            };
         }
 
         private void RefreshList()
@@ -37,6 +42,21 @@ namespace SeniorAssistance.Pages
             {
                 ListMedicamentHistory.Add(item);
             }
+        }
+
+
+        void switcher_Toggled(object sender, ToggledEventArgs e)
+        {
+            Debug.WriteLine("Switch is now {0}", e.Value);
+            Debug.WriteLine("Switch is {0}", e.ToString());
+            Debug.WriteLine("Switch is now {0}", e.GetHashCode());
+            Debug.WriteLine("Switch GetType {0}", e.GetType());
+            Debug.WriteLine("sender {0}", sender.GetHashCode());
+            Debug.WriteLine("sender {0}", sender.GetType());
+            //ListMedicamentHistory
+            //database.Connection.SaveItem(medhistory);
+            //RefreshList(medicament);
+            //database.SaveItem
         }
     }
 }

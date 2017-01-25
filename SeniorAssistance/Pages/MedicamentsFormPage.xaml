@@ -40,7 +40,7 @@
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <Button  x:Name="BtnCancel" Text="Cancel" Grid.Column="0" />
+                    <Button x:Name="BtnCancel" Text="Cancel" Grid.Column="0" />
                     <Button x:Name="BtnSave" Text="Save" Grid.Column="1" />
                     <Button x:Name="BtnDelete" Text="Delete" Grid.Column="2" />
                 </Grid>
