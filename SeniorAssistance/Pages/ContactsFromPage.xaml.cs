@@ -10,12 +10,12 @@ namespace SeniorAssistance
 {
 	public partial class ContactsFromPage : ContentPage
 	{
-        ContactDatabase database;
+        MedicamentHistoryDatabase database;
 
         public ContactsFromPage()
 		{
 			InitializeComponent();
-            database = new ContactDatabase();
+            database = new MedicamentHistoryDatabase();
           
             BtnSave.Clicked += async (sender, e) =>
             {
@@ -30,6 +30,8 @@ namespace SeniorAssistance
                     Firstname = Firstname.Text,
                     Lastname = Lastname.Text,
                     Phone = Phone.Text,
+                    //Urgence = Urgence
+
                 };
                 item.TypeContact = action;
 

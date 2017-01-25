@@ -9,14 +9,10 @@
             <Style x:Key="buttonStyle" TargetType="Button">
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="VerticalOptions" Value="CenterAndExpand" />
-            
                 <Setter Property="WidthRequest" Value="200" />
                 <Setter Property="TextColor" Value="#0B5345" />
                 <Setter Property="BackgroundColor" Value="#ECEFF1" />
             </Style>
-            
-
-
 
         </ResourceDictionary>
     </Application.Resources>

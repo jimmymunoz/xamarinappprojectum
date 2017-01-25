@@ -80,9 +80,13 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\AlertMedicament.cs" />
     <Compile Include="Model\ContactsTypeContact.cs" />
     <Compile Include="Pages\EditMyProfilForm.xaml.cs">
       <DependentUpon>EditMyProfilForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MedicamentHistoryPage.xaml.cs">
+      <DependentUpon>MedicamentHistoryPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\ProfilPage.xaml.cs">
       <DependentUpon>ProfilPage.xaml</DependentUpon>
@@ -156,6 +160,7 @@
     <Compile Include="Model\NotificationSms.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Service\CurrentAlertsMedicament.cs" />
+    <Compile Include="Service\SendNotification.cs" />
     <Compile Include="Service\StartRunMedicamentAlertTaskMessage.cs" />
     <Compile Include="Service\TickedMessage.cs" />
     <Compile Include="Timer.cs" />
@@ -239,9 +244,12 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Service\" />
-    <Folder Include="Maps\" />
+    <EmbeddedResource Include="Pages\MedicamentHistoryPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.3.180\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.3.180\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />

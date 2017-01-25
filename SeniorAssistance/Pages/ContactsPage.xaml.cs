@@ -10,7 +10,7 @@ namespace SeniorAssistance
 {
     public partial class ContactsPage : ContentPage
     {
-        ContactDatabase databaseContact;
+        MedicamentHistoryDatabase databaseContact;
         ContactTypeDatabase databaseConntactType;
         ObservableCollection<ContactsTypeContact> ListContact { get; set; }
         ObservableCollection<ContactsTypeContact> liste { get; set; }
@@ -18,7 +18,7 @@ namespace SeniorAssistance
         public ContactsPage()
         {
             InitializeComponent();
-            databaseContact = new ContactDatabase();
+            databaseContact = new MedicamentHistoryDatabase();
             databaseConntactType = new ContactTypeDatabase();
             ListContact = new ObservableCollection<ContactsTypeContact>();
             liste = new ObservableCollection<ContactsTypeContact>();

@@ -33,6 +33,17 @@ namespace SeniorAssistance.Database
             System.Diagnostics.Debug.WriteLine("Insert: " + item.ToString());
             return Connection.Insert(item);
         }
+
+        public int UpdateItem<T>(T item) where T : ITable
+        {
+            if (item.ID > 0)
+            {
+                System.Diagnostics.Debug.WriteLine("Update: " + item.ToString());
+                return Connection.Update(item);
+            }
+            return -1;
+        }
+
         public T GetItem<T>(int id) where T : ITable, new()
         {
             return (from i in Connection.Table<T>()
