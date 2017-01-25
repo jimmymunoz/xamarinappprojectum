@@ -3,6 +3,7 @@ using SeniorAssistance.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using Xamarin.Forms;
 
 namespace SeniorAssistance
@@ -10,41 +11,42 @@ namespace SeniorAssistance
     public partial class MedicamentsFormPage : ContentPage
     {
         MedicamentDatabase database;
-        ObservableCollection<Medicament> Items1 { get; set; }
+        Medicament medicament;
+        AlertDatabase databasealert;
+       ObservableCollection <Medicament> Items1 { get; set; }
 
         public MedicamentsFormPage()
         {
             InitializeComponent();
-
+            databasealert = new AlertDatabase();
             database = new MedicamentDatabase();
             Items1 = new ObservableCollection<Medicament>();
             // Liste des alert
             //ItemList.ItemsSource = Items1;
 
-
+           
             BtnSave.Clicked += async (sender, e) =>
             {
+               // BtnAlert.IsVisible = true;
                 if (string.IsNullOrWhiteSpace(Name.Text))
+
                     return;
-                Medicament medicament = new Medicament
+                medicament = new Medicament
                 {
-                    Name = Name.Text,
-                    //StartDate = StartDate.BindingContext
+                    Name = Name.Text,                   
                     StartDate = StartDate.Date,
                     Enabled = Enabled.IsToggled,
 
                 };
                 if (!string.IsNullOrWhiteSpace(ID.Text))
+                {
                     medicament.ID = Int32.Parse(ID.Text);
-
+                }
                 database.SaveItem(medicament);
 
-                var answer = await DisplayAlert("Exit", "Want to add alert for this Medicament :  s" + medicament.Name, "Yes", "No");
+                var answer = await DisplayAlert("Exit", "Want to add alert for this Medicament : " + medicament.Name, "Yes", "No");
                 if (answer)
                 {
-                    //item = e.SelectedItem as Medicament;
-                    //var secondPage = new AlertFormPage();
-                    //secondPage.BindingContext = medicament;
                     await Navigation.PushAsync(new AlertFormPage(medicament));
 
                 }
@@ -63,7 +65,7 @@ namespace SeniorAssistance
                     * Normalement :c'est comme ça,malheureusement la methode getitem cast le type de l'item 
                    Contact contactToDelete= database.GetItem<Contact>(Int32.Parse(ID.Text));
                    database.DeleteItem(item);*/
-
+                   
                 var answer = await DisplayAlert("Exit", "Do you want to delete", "Yes", "No");
                 if (answer)
                 {
@@ -79,8 +81,39 @@ namespace SeniorAssistance
                     await Navigation.PushAsync(new MedicamentsPage());
                 }
             };
-        }
 
+            BtnAlert.Clicked += async (sender, e) =>
+            {
+
+                medicament = new Medicament
+                {
+                    Name = Name.Text,
+                    //StartDate = StartDate.BindingContext
+                    StartDate = StartDate.Date,
+                    Enabled = Enabled.IsToggled,
+
+                };
+                if (!string.IsNullOrWhiteSpace(ID.Text))
+                {
+                    medicament.ID = Int32.Parse(ID.Text);
+                }
+                database.SaveItem(medicament);
+                /*
+                        int items = (from i in databasealert.Connection.Table<Alert>()
+                                    where i.Idmedicament == item.ID                         
+                                     select i).Count();
+
+                        if (items > 0)
+                        {*/
+                await Navigation.PushAsync(new AlertFormPage(medicament));
+                
+               
+                    
+                
+                
+
+            };
+        }
     }
 }
 

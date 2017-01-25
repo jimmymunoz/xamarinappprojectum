@@ -39,7 +39,7 @@ namespace SeniorAssistance
             databaseAlert = new AlertDatabase();
             databaseMedicament = new MedicamentDatabase();
             databaseMedicamentHistory = new MedicamentHistoryDatabase();
-            databaseContact = new ContactDatabase();
+            databaseContact = new Database.ContactDatabase();
             ListAlertMedicaments = new ObservableCollection<AlertMedicament>();
             ListAlertsMedicamentValidated = new ObservableCollection<AlertMedicament>();
             ListMedicamentsHistory = new ObservableCollection<MedicamentHistory>();

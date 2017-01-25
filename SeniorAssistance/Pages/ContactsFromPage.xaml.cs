@@ -51,9 +51,9 @@ namespace SeniorAssistance
 
                 var answer = await DisplayAlert("Exit", "Do you wan't to delet this Contact", "Yes", "No");
                 if (answer)
-                {                   
-                Contact item = new Contact
                 {
+                  Contact item = new Contact
+                  {
                     Firstname = Firstname.Text,
                     Lastname = Lastname.Text,
                     Phone = Phone.Text,

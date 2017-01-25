@@ -26,9 +26,9 @@
                     <Button Grid.Column="2" x:Name="Save" Text="Save Item"/>
                 </Grid>
 
-                <StackLayout Orientation="Vertical" Grid.Row="1" Padding="10">
+                <StackLayout Orientation="Vertical" Grid.Row="1" Padding="50" >
                     <ScrollView>
-                        <ListView x:Name="AlertsView" RowHeight="50">
+                        <ListView x:Name="AlertsView" RowHeight="100">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <ViewCell>

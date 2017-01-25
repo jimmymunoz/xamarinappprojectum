@@ -2,7 +2,7 @@
 
 namespace SeniorAssistance.Model
 {
-    class Contact : ITable
+    class Contact: ITable
     {
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }

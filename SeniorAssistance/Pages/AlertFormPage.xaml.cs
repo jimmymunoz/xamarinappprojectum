@@ -24,7 +24,7 @@ namespace SeniorAssistance
             database = new AlertDatabase();
             ListAlerts = new ObservableCollection<Alert>();
             AlertsView.ItemsSource = ListAlerts;
-
+            RefreshList(medicament.ID);
             Frequence = new Dictionary<string, int>
             {
                 { "Every day", 1},
@@ -89,10 +89,10 @@ namespace SeniorAssistance
                     Freq = freq,
                 };
                 database.SaveItem(item);
-                RefreshList(medicament);
+                RefreshList(medicament.ID);
 				CurrentAlertsMedicament.getInstance().updateListAlert();
             };
-            RefreshList(medicament);
+            RefreshList(medicament.ID);
 
         }
 
@@ -102,10 +102,10 @@ namespace SeniorAssistance
              {
                  var bird = args.Item;
                  database.Connection.Delete(bird);
-                 RefreshList(medicament);
+                 RefreshList(medicament.ID);
              };
 
-            RefreshList(medicament);
+            RefreshList(medicament.ID);
 
         }
         void clickImageDelete(object sender, EventArgs e)
@@ -114,17 +114,19 @@ namespace SeniorAssistance
                
         }
 
-        private void RefreshList(Medicament medicament)
+        private void RefreshList(int idmedicament)
         {
             ListAlerts.Clear();
-            int id = medicament.ID;
+            //int id = medicament.ID;
 
             var items = (from i in database.GetItems<Alert>()
-                 where i.Idmedicament == id
-                 select i);
+                 where i.Idmedicament == idmedicament
+                         select i);
 
             foreach (var item in items)
+            {
                 ListAlerts.Add(item);
+            }
         }
     }
 }
