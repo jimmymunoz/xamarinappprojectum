@@ -1,6 +1,4 @@
-﻿
-using System;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace SeniorAssistance
 
@@ -9,35 +7,32 @@ namespace SeniorAssistance
     {
         public WebViewInternet(string UrlView , string title)
         {
-            
-                Label header = new Label
-                { 
-                    Text = title,
-                    FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)),
-                    HorizontalOptions = LayoutOptions.Center
-                };
+            Label header = new Label
+            { 
+                Text = title,
+                FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)),
+                HorizontalOptions = LayoutOptions.Center
+            };
 
-                WebView webView = new WebView
+            WebView webView = new WebView
+            {
+                Source = new UrlWebViewSource
                 {
-                    Source = new UrlWebViewSource
-                    {
-                        Url = UrlView,
-                    },
-                    VerticalOptions = LayoutOptions.FillAndExpand
-                };
+                    Url = UrlView,
+                },
+                VerticalOptions = LayoutOptions.FillAndExpand
+            };
 
-                // Accomodate iPhone status bar.
-                this.Padding = new Thickness(10, Device.OnPlatform(20, 0, 0), 10, 5);
+            // Accomodate iPhone status bar.
+            this.Padding = new Thickness(10, Device.OnPlatform(20, 0, 0), 10, 5);
 
-                // Build the page.
-                this.Content = new StackLayout
-                {
-                    Children =
-                {
+            // Build the page.
+            this.Content = new StackLayout{
+                Children = {
                     header,
                     webView
                 }
-                };
-            }
+            };
         }
     }
+}

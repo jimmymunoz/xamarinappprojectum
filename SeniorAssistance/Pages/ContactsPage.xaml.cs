@@ -63,8 +63,6 @@ namespace SeniorAssistance
                 }
                 ListContact.Add(itemListView);
             } 
-
-           
                                    
         }
 

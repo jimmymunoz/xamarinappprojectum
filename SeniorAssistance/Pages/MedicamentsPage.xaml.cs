@@ -21,8 +21,7 @@ namespace SeniorAssistance
             InitializeComponent();            
             ListMedicaments = new ObservableCollection<Medicament>();
             MedicamentsView.ItemsSource = ListMedicaments;
-           // RefreshList();
-
+            
             btnAdd.Clicked += (sender, e) =>
 			{
 				Navigation.PushAsync(new MedicamentsFormPage());
@@ -42,7 +41,6 @@ namespace SeniorAssistance
 
         protected override void OnAppearing()
         {
-            
             base.OnAppearing();
             System.Diagnostics.Debug.WriteLine("*****Here*****");
             

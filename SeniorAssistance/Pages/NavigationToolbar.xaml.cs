@@ -37,7 +37,6 @@ namespace SeniorAssistance
 		void clickImageCall(object sender, EventArgs e)
 		{
 			Navigation.PushAsync(new ContactsPage());
-			//Navigation.PushAsync(new ContactPage());
 		}
 	}
 }

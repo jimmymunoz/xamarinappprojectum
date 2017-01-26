@@ -58,7 +58,6 @@ namespace SeniorAssistance
 
         void clickImagbtnBPCE(object sender, EventArgs e)
         {
-            
             Navigation.PushAsync(new WebViewInternet("http://www.groupebpce.fr/", "Acceder a mon Compte"));
         }
 

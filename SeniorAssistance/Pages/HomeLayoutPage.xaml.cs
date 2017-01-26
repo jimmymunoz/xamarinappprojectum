@@ -27,7 +27,6 @@ namespace SeniorAssistance
 			tapImageMedicaments.Tapped += clickImageMedicaments;
 			btnMedicaments.GestureRecognizers.Add(tapImageMedicaments);
             
-
             var tapImageGames = new TapGestureRecognizer();
 			tapImageGames.Tapped += clickImageGames;
 			btnGames.GestureRecognizers.Add(tapImageGames);

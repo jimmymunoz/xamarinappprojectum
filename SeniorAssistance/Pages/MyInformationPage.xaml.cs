@@ -20,8 +20,7 @@ namespace SeniorAssistance
                 if (string.IsNullOrWhiteSpace(Firstname.Text) || string.IsNullOrWhiteSpace(Lastname.Text) || string.IsNullOrWhiteSpace(Phone.Text))
                     return;
                 
-
-                User item = new User
+				User item = new User
                 {
                     Firstname = Firstname.Text,
                     Lastname = Lastname.Text,

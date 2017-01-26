@@ -1,7 +1,6 @@
 ﻿using System;
 
 namespace SeniorAssistance
-
 {
 	public class SMSMessage
 	{

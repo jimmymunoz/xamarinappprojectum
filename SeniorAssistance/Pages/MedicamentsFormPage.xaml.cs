@@ -10,10 +10,10 @@ namespace SeniorAssistance
 {
     public partial class MedicamentsFormPage : ContentPage
     {
-        MedicamentDatabase database;
-        Medicament medicament;
-        AlertDatabase databasealert;
-       ObservableCollection <Medicament> Items1 { get; set; }
+		MedicamentDatabase database;
+		Medicament medicament;
+		AlertDatabase databasealert;
+		ObservableCollection <Medicament> Items1 { get; set; }
 
         public MedicamentsFormPage()
         {
@@ -21,17 +21,13 @@ namespace SeniorAssistance
             databasealert = new AlertDatabase();
             database = new MedicamentDatabase();
             Items1 = new ObservableCollection<Medicament>();
-            // Liste des alert
-            //ItemList.ItemsSource = Items1;
-
-           
+            
             BtnSave.Clicked += async (sender, e) =>
             {
-               // BtnAlert.IsVisible = true;
                 if (string.IsNullOrWhiteSpace(Name.Text))
-
-                    return;
-                medicament = new Medicament
+					return;
+                
+				medicament = new Medicament
                 {
                     Name = Name.Text,                   
                     StartDate = StartDate.Date,
@@ -58,8 +54,8 @@ namespace SeniorAssistance
             {
                 Navigation.PushAsync(new MedicamentsPage());
             };
-            // Pour le delete 
-            BtnDelete.Clicked += async (sender, e) =>
+            
+			BtnDelete.Clicked += async (sender, e) =>
             {
                 /*
                     * Normalement :c'est comme ça,malheureusement la methode getitem cast le type de l'item 
@@ -99,19 +95,13 @@ namespace SeniorAssistance
                 }
                 database.SaveItem(medicament);
                 /*
-                        int items = (from i in databasealert.Connection.Table<Alert>()
-                                    where i.Idmedicament == item.ID                         
-                                     select i).Count();
+                int items = (from i in databasealert.Connection.Table<Alert>()
+                            where i.Idmedicament == item.ID                         
+                             select i).Count();
 
-                        if (items > 0)
-                        {*/
+                if (items > 0)
+                {*/
                 await Navigation.PushAsync(new AlertFormPage(medicament));
-                
-               
-                    
-                
-                
-
             };
         }
     }

@@ -1,10 +1,8 @@
 ﻿using SeniorAssistance.Database;
 using SeniorAssistance.Model;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using Xamarin.Forms;
-//using static Android.Resource;
 
 namespace SeniorAssistance
 {

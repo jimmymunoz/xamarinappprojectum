@@ -75,13 +75,6 @@ namespace SeniorAssistance
                     freq = picker.SelectedIndex;
                 };
 
-                //Debug.WriteLine("Action: " + action);
-                /*
-                if (!string.IsNullOrWhiteSpace(Hour.Text))
-                    return;
-                */
-                //item.ID = Int32.Parse(Idmedicament.Text);
-
                 Alert item = new Alert
                 {
                     Idmedicament = medicament.ID,
@@ -117,8 +110,7 @@ namespace SeniorAssistance
         private void RefreshList(int idmedicament)
         {
             ListAlerts.Clear();
-            //int id = medicament.ID;
-
+            
             var items = (from i in database.GetItems<Alert>()
                  where i.Idmedicament == idmedicament
                          select i);

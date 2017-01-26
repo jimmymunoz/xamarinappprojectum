@@ -30,7 +30,6 @@ namespace SeniorAssistance
             tapImageGames.Tapped += clickImageGames;
             btnCréditmutuelCIC.GestureRecognizers.Add(tapImageGames);
 
-
         }
 
         void clickImageInternet(object sender, EventArgs e)
@@ -52,9 +51,6 @@ namespace SeniorAssistance
         {
             Navigation.PushAsync(new GamesPage());
         }
-
-
-
 
     }
 }

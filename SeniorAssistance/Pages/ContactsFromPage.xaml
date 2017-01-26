@@ -48,10 +48,6 @@
                    
 	            </Grid>
             </Grid>
-
-            
-
-
             <common:NavigationToolbar Grid.Column="1">
             </common:NavigationToolbar>
         </Grid>

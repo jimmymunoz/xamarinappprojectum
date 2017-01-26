@@ -45,16 +45,8 @@ namespace SeniorAssistance.Droid
 						null,
 						0, (int)TimeSpan.FromMinutes(1).TotalMilliseconds);
                     
-                    /*
-					while (timer != null)
-					{
-						Console.WriteLine("Time Android! " + DateTime.Now);
-						//MainPage.Title = "New " + DateTime.Now;
-					}
-					*/
-
-                    //var counter = new TaskCounter()
-                    //counter.RunCounter(_cts.Token).Wait();
+                   //var counter = new TaskCounter()
+                   //counter.RunCounter(_cts.Token).Wait();
                 }
 				catch (Android.Accounts.OperationCanceledException)
 				{

@@ -22,13 +22,8 @@ namespace SeniorAssistance
             InitializeComponent();
           
             user = database.GetItems<User>();
-            /*Firstname.settext = items.Firstname;
-            Lastname = items.Lastname;
-            Phone = items.Phone;
-            = items.Adresse;*/
             foreach ( var  us in user)
             {
-                
                 Firstname.Text = us.Firstname;
                 Lastname.Text = us.Lastname;
                 Phone.Text = us.Phone;
@@ -39,9 +34,8 @@ namespace SeniorAssistance
             var tapImageEditProfil = new TapGestureRecognizer();
             tapImageEditProfil.Tapped += editProfile;
             imageEditProfil.GestureRecognizers.Add(tapImageEditProfil);
-
-
         }
+
         void editProfile(object sender, EventArgs e)
         {
             User us =  user.First();

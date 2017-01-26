@@ -35,21 +35,15 @@ namespace SeniorAssistance
             
             int user  = database.GetCount<User>();
 
-
-
             if (user.Equals(0))
             {
                 Navigation.PushAsync(new MyInformationPage());
             }
             else
             {
-                //User user = database.GetItems<User>(.First<User>();
                 Navigation.PushAsync(new ProfilPage());
             }
-                // if contacts existe profile
-                
-            //sion ilnotesesinformation 
-           // Navigation.PushAsync(new MyInformationPage());
+            
 		}
 
 		void clickImageContacts(object sender, EventArgs e)
@@ -61,9 +55,6 @@ namespace SeniorAssistance
 		{
 			Navigation.PushAsync(new SettingsBankPage());
 		}
-
-
-
 
 	}
 }

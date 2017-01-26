@@ -32,8 +32,6 @@ namespace SeniorAssistance
 				VerticalOptions = LayoutOptions.FillAndExpand
 			};
 
-
-
 			var slider = new Slider(1, 18, 1);
 			slider.ValueChanged += (sender, e) =>
 			{

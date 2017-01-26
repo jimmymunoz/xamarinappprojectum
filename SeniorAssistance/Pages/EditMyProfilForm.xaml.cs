@@ -18,17 +18,12 @@ namespace SeniorAssistance.Pages
 
             InitializeComponent();
 
-
-            database = new UserDatabase();
+			database = new UserDatabase();
             InitializeComponent();
-
-
 
             var tapImageEditProfil = new TapGestureRecognizer();
             tapImageEditProfil.Tapped += saveChangeProfile;
             saveNewChange.GestureRecognizers.Add(tapImageEditProfil);
-
-
         }
 
         async void saveChangeProfile(object sender, EventArgs e)
@@ -41,7 +36,6 @@ namespace SeniorAssistance.Pages
                 Lastname = Lastname.Text,
                 Phone = Phone.Text,
                 Adresse = Adresse.Text,
-
             };
             if (!string.IsNullOrWhiteSpace(ID.Text))
                 user.ID = Int32.Parse(ID.Text);
