@@ -17,15 +17,12 @@ Senior Assistance est une application d’assistance aux personnes âgées en ut
 	- Web Service Envois SMS
 
 
-###BD SQL Lite:
+###Digrame de classes:
+##Models :
 ![uml.png](images/uml.png?raw=true "uml.png")
 
-###BD Neo4j:
+##DB :
 ![uml-db.png](images/uml-db.png.png?raw=true "uml-db.png")
-
-###Example requête:
-![query](images/db-query.png?raw=true "query")
-###Metamodèle UML Diagrame d'activité:
 
 ##Screenshots:
 
@@ -33,8 +30,8 @@ Senior Assistance est une application d’assistance aux personnes âgées en ut
 ![home](images/screenshot-home.jpg?raw=true "home")
 ###configuration
 ![configuration](images/screenshot-configuration.jpg?raw=true "configuration")
-######type-contact.jpg:
-![screenshot-type-contact](images/screenshot-type-contact.jpg?raw=true "screenshot-type-contact")
+######sms.jpg:
+![screenshot-sms](images/screenshot-type-contact.jpg?raw=true "screenshot-sms")
 ###contact-list
 ![contact-list](images/screenshot-contact-list.jpg?raw=true "contact-list")
 ######profile:
@@ -78,7 +75,7 @@ Senior Assistance est une application d’assistance aux personnes âgées en ut
 
 ###Examples code
 
-Medicaments Page:
+Medicaments Page (Shared):
 ```c#
 using System;
 using System.Linq;
@@ -144,6 +141,7 @@ namespace SeniorAssistance
 }
 ```
 
+Main Activity (Android):
 ```c#
 using System;
 
