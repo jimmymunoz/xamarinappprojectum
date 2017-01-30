@@ -22,53 +22,45 @@ Senior Assistance est une application d’assistance aux personnes âgées en ut
 ![uml.png](images/uml.png?raw=true "uml.png")
 
 ##DB :
-![uml-db.png](images/uml-db.png.png?raw=true "uml-db.png")
+![uml-db.png](images/uml-db.png?raw=true "uml-db.png")
 
 ##Screenshots:
 
-###home
+###Home
 ![home](images/screenshot-home.jpg?raw=true "home")
-###configuration
+###Internet
+![internet](images/screenshot-internet.jpg?raw=true "internet")
+###Configuration
 ![configuration](images/screenshot-configuration.jpg?raw=true "configuration")
-######sms.jpg:
-![screenshot-sms](images/screenshot-type-contact.jpg?raw=true "screenshot-sms")
-###contact-list
+###Contact list
 ![contact-list](images/screenshot-contact-list.jpg?raw=true "contact-list")
-######profile:
+###Profile:
 ![screenshot-profile](images/screenshot-profile.jpg?raw=true "screenshot-profile")
-###edit-profile
+###Edit profile
 ![edit-profile](images/screenshot-edit-profile.jpg?raw=true "edit-profile")
-###add-contact
+###Add contact
 ![add-contact](images/screenshot-add-contact.jpg?raw=true "add-contact")
-###call-action
-![call-action](images/screenshot-call-action.jpg?raw=true "call-action")
-###call-contact
-![call-contact](images/screenshot-call-contact.jpg?raw=true "call-contact")
-###call-phone
-![call-phone](images/screenshot-call-phone.jpg?raw=true "call-phone")
-###add_medicament
+###Add medicament
 ![add_medicament](images/screenshot-add_medicament.jpg?raw=true "add_medicament")
-###alarm-frequence
+###Alarm frequence
 ![alarm-frequence](images/screenshot-alarm-frequence.jpg?raw=true "alarm-frequence")
-###alarm-list
+###Alarm list
 ![alarm-list](images/screenshot-alarm-list.jpg?raw=true "alarm-list")
-###alarm-medicament
+###Alarm medicament
 ![alarm-medicament](images/screenshot-alarm-medicament.jpg?raw=true "alarm-medicament")
-###gps-hospitals
+###Gps-hospitals
 ![gps-hospitals](images/screenshot-gps-hospitals.jpg?raw=true "gps-hospitals")
-###medecament-sms
+###Medecament sms
 ![medecament-sms](images/screenshot-medecament-sms.jpg?raw=true "medecament-sms")
-###medicament-history-untaken
+###Medicament history
 ![medicament-history-untaken](images/screenshot-medicament-history-untaken.jpg?raw=true "medicament-history-untaken")
-###medicament-history
-![medicament-history](images/screenshot-medicament-history.jpg?raw=true "medicament-history")
-###medicament-list
+###Medicament list
 ![medicament-list](images/screenshot-medicament-list.jpg?raw=true "medicament-list")
-###notification-medicament
+###Notification medicament
 ![notification-medicament](images/screenshot-notification-medicament.jpg?raw=true "notification-medicament")
-###bank-list
+###Bank list
 ![bank-list](images/screenshot-bank-list.jpg?raw=true "bank-list")
-###bank-view
+###Bank view
 ![bank-view](images/screenshot-bank-view.jpg?raw=true "bank-view")
 
 
